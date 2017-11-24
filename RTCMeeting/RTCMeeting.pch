@@ -1,0 +1,66 @@
+//
+//  RTCMeeting.pch
+//  RTCMeeting
+//
+//  Created by jh on 2017/10/12.
+//  Copyright © 2017年 jh. All rights reserved.
+//
+
+#ifndef RTCMeeting_pch
+#define RTCMeeting_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#pragma mark - RTMeeting SDK
+#import <RTMeetEngine/AnyRTCMeetEngine.h>
+
+#import <RTMeetEngine/RTMeetKit.h>
+
+#import <RTMeetEngine/RTMeetKitDelegate.h>
+
+#import <RTMeetEngine/RTMeetAudioKit.h>
+
+#import <RTMeetEngine/RTMeetAudioKitDelegate.h>
+
+#pragma mark - 自定义
+//公共类
+#import "ATCommon.h"
+//视频
+#import "ATVideoView.h"
+//音频
+#import "ATVoiceView.h"
+//提示
+#import <XHToast.h>
+
+#pragma mark - 宏
+#define ATBordColor [ATCommon getColor:@"#145bee"]
+
+//弱指针
+#define WEAKSELF __weak typeof(self)weakSelf =self
+
+//RGB
+#define RGBA(r, g, b, a)    [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+
+#define RGB(r, g, b)     RGBA(r, g, b, 1.0f)
+
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#pragma mark - other
+//会议类型
+typedef enum : NSInteger {
+    RTCMeeting_360P = 0,
+    RTCMeeting_720P,
+    RTCMeeting_1080P,
+    RTCMeeting_3_3,
+    RTCMeeting_Audio
+    
+} RTCMeetingMode;
+
+#import <Masonry.h>
+
+#import "AppDelegate.h"
+
+#endif /* RTCMeeting_pch */

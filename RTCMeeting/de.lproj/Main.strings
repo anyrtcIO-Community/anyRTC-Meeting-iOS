@@ -1,0 +1,30 @@
+
+/* Class = "UITextField"; placeholder = "请输入会议室唯一ID"; ObjectID = "1Tm-jB-2bQ"; */
+"1Tm-jB-2bQ.placeholder" = "请输入会议室唯一ID";
+
+/* Class = "UILabel"; text = "随机姓名"; ObjectID = "4PV-te-qRu"; */
+"4PV-te-qRu.text" = "随机姓名";
+
+/* Class = "UIButton"; normalTitle = "语音会议室02"; ObjectID = "5oh-JY-By2"; */
+"5oh-JY-By2.normalTitle" = "语音会议室02";
+
+/* Class = "UILabel"; text = "* 会议室ID需要在WEB端申请获得"; ObjectID = "ARG-kP-lIJ"; */
+"ARG-kP-lIJ.text" = "* 会议室ID需要在WEB端申请获得";
+
+/* Class = "UIButton"; normalTitle = "四人会议 - 720P"; ObjectID = "L16-a1-Xbk"; */
+"L16-a1-Xbk.normalTitle" = "四人会议 - 720P";
+
+/* Class = "UIButton"; normalTitle = "语音会议室01"; ObjectID = "gAX-Po-uGV"; */
+"gAX-Po-uGV.normalTitle" = "语音会议室01";
+
+/* Class = "UIButton"; normalTitle = "技术支持：021-65650071"; ObjectID = "h2w-XK-AJW"; */
+"h2w-XK-AJW.normalTitle" = "技术支持：021-65650071";
+
+/* Class = "UIButton"; normalTitle = "九人会议室"; ObjectID = "n7R-XR-eBW"; */
+"n7R-XR-eBW.normalTitle" = "九人会议室";
+
+/* Class = "UILabel"; text = "随机姓名"; ObjectID = "qOj-2R-qsB"; */
+"qOj-2R-qsB.text" = "随机姓名";
+
+/* Class = "UIButton"; normalTitle = "参观会议室"; ObjectID = "ybO-cU-fdy"; */
+"ybO-cU-fdy.normalTitle" = "参观会议室";
