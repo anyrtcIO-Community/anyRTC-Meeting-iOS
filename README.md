@@ -20,7 +20,11 @@ Xcode 8以上</br>
 
 ### 操作步骤：
 1、一台iphone启动app，选择进入会议房间；</br>
+
 2、另一台手机进入相同会议房间，实时会议开始。</br>
+
+### 资源中心
+[更多详细方法使用，请查看API文档](https://www.anyrtc.io/resoure)
 
 
 ## 项目展示
@@ -38,6 +42,9 @@ Xcode 8以上</br>
 苹果2016年6月新政策规定新上架app必须支持ipv6-only。该库已经适配
 ## Android版anyRTC-Meeting
 [anyRTC-Meeting-Android](https://github.com/AnyRTC/anyRTC-Meeting-Android)
+## 网页版anyRTC-Meeting
+[anyRTC-Meeting-Web](https://www.anyrtc.io/demo/meeting)
+
 
 ## 商用授权
 程序发布需商用授权，业务咨询请联系
