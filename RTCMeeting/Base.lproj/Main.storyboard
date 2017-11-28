@@ -197,11 +197,14 @@
                             </view>
                             <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y78-Ok-7Ch">
                                 <rect key="frame" x="20" y="302" width="374" height="45"/>
-                                <color key="backgroundColor" red="0.073717080056667328" green="0.36892133951187134" blue="0.93619447946548462" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="lXv-NA-y0J"/>
                                 </constraints>
                                 <state key="normal" title="  四人会议室 - 360P" image="peopleroom">
+                                    <color key="titleColor" red="0.54111534360000002" green="0.54121166470000004" blue="0.54110920429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="background">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -215,6 +218,9 @@
                                 <state key="normal" title="  四人会议室 - 720P" image="peopleroom">
                                     <color key="titleColor" red="0.54111534360000002" green="0.54121166470000004" blue="0.54110920429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="background">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="doSomethingEvents:" destination="ozR-Jh-MBz" eventType="touchUpInside" id="FfP-zI-y85"/>
                                     <segue destination="i5k-kz-NaQ" kind="presentation" identifier="videoName" id="Nij-we-IfN"/>
@@ -225,6 +231,9 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="  四人会议室 - 1080P" image="peopleroom">
                                     <color key="titleColor" red="0.54111534360000002" green="0.54121166470000004" blue="0.54110920429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="background">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="doSomethingEvents:" destination="ozR-Jh-MBz" eventType="touchUpInside" id="cyj-bl-Vp9"/>
@@ -237,6 +246,9 @@
                                 <state key="normal" title="  九人会议室" image="peopleroom">
                                     <color key="titleColor" red="0.54111534357070923" green="0.54121166467666626" blue="0.54110920429229736" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="background">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="doSomethingEvents:" destination="ozR-Jh-MBz" eventType="touchUpInside" id="EIl-qj-mo4"/>
                                     <segue destination="Wbi-3X-pdJ" kind="presentation" identifier="videosName" id="rDd-mC-IMp"/>
@@ -248,6 +260,9 @@
                                 <state key="normal" title="  语音会议室01" image="Voiceroom">
                                     <color key="titleColor" red="0.54111534360000002" green="0.54121166470000004" blue="0.54110920429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="background">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="doSomethingEvents:" destination="ozR-Jh-MBz" eventType="touchUpInside" id="Aha-v1-Luo"/>
                                     <segue destination="bdp-1R-3ak" kind="presentation" identifier="audioName" id="VlC-19-Ugn"/>
@@ -258,6 +273,9 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="  语音会议室02" image="Voiceroom">
                                     <color key="titleColor" red="0.54111534360000002" green="0.54121166470000004" blue="0.54110920429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="background">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="doSomethingEvents:" destination="ozR-Jh-MBz" eventType="touchUpInside" id="LLg-eo-XS8"/>
@@ -778,6 +796,7 @@
         <image name="Room_Title" width="156" height="38"/>
         <image name="Voiceroom" width="22" height="22"/>
         <image name="anyRTCLOGO" width="215" height="55"/>
+        <image name="background" width="248" height="30"/>
         <image name="bg_02" width="250" height="143"/>
         <image name="bg_big" width="250" height="444"/>
         <image name="button_Flipcamera" width="33" height="33"/>

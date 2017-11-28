@@ -20,6 +20,10 @@
 #warning - 前往https://www.anyrtc.io/获取相关配置信息
     // 配置开发者信息
     [AnyRTCMeetEngine initEngineWithAnyRTCInfo:developerID andAppId:appID andKey:key andToke:token];
+    
+    //配置私有云，默认无需配置
+    //[AnyRTCMeetEngine configServerForPriCloud:@"XXX" andPort:nil];
+    
     [NSThread sleepForTimeInterval:1.0];
     return YES;
 }
