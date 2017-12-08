@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Bugly/Bugly.h>
 
 @interface AppDelegate ()
 
@@ -25,6 +26,9 @@
     //[AnyRTCMeetEngine configServerForPriCloud:@"XXX" andPort:nil];
     
     [NSThread sleepForTimeInterval:1.0];
+    
+    //腾讯Bugly
+    [Bugly startWithAppId:@"XXX"];
     return YES;
 }
 

@@ -202,7 +202,7 @@
                                     <constraint firstAttribute="height" constant="45" id="lXv-NA-y0J"/>
                                 </constraints>
                                 <state key="normal" title="  四人会议室 - 360P" image="peopleroom">
-                                    <color key="titleColor" red="0.54111534360000002" green="0.54121166470000004" blue="0.54110920429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.54111534357070923" green="0.54121166467666626" blue="0.54110920429229736" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <state key="highlighted" backgroundImage="background">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

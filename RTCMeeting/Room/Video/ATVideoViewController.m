@@ -8,7 +8,7 @@
 
 #import "ATVideoViewController.h"
 
-@interface ATVideoViewController ()<RTMeetKitDelegate,AnyRTCWriteBlockDelegate>
+@interface ATVideoViewController ()<RTMeetKitDelegate,AnyRTCUserShareBlockDelegate>
 
 //房间名
 @property (weak, nonatomic) IBOutlet UIButton *topicButton;
@@ -81,22 +81,22 @@
     }
 }
 
-- (void)onRTCOpenVideoRender:(NSString*)strRTCPeerId withUserId:(NSString*)strUserId withUserData:(NSString*)strUserData{
+-(void)onRTCOpenVideoRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId withUserData:(NSString*)strUserData{
     //其他与会者视频接通回调(音视频)
     NSDictionary *dict = [ATCommon fromJsonStr:strUserData];
-    UIView *videoView = [self getVideoViewWithRTCPeerId:strRTCPeerId withNickName:[dict objectForKey:@"nickName"]];
+    UIView *videoView = [self getVideoViewWithRTCPeerId:strRTCPubId withNickName:[dict objectForKey:@"nickName"]];
     [self.view insertSubview:videoView atIndex:99];
     [self.videoArr addObject:videoView];
 
-    [self.meetKit setRTCVideoRender:strRTCPeerId andRender:videoView];
+    [self.meetKit setRTCVideoRender:strRTCPubId andRender:videoView];
 }
 
-- (void)onRTCCloseVideoRender:(NSString*)strRTCPeerId withUserId:(NSString *)strUserId{
+-(void)onRTCCloseVideoRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId{
     @synchronized (self.videoArr){
         //其他会议者离开的回调（音视频）
         for (NSInteger i = 0; i < self.videoArr.count; i++) {
             ATVideoView *videoView = self.videoArr[i];
-            if ([videoView.peerId isEqualToString:strRTCPeerId]) {
+            if ([videoView.pubId isEqualToString:strRTCPubId]) {
                 if (videoView.tag == 1000) {
                     self.showView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
                     self.showView.tag = 1000;
@@ -115,7 +115,7 @@
 - (void)onRTCAVStatus:(NSString*)strRTCPeerId withAudio:(BOOL)bAudio withVideo:(BOOL)bVideo{
     //其他与会者对音视频的操作的回调（比如对方关闭了音频，对方关闭了视频）
     for (ATVideoView *videoView in self.videoArr) {
-        if ([videoView.peerId isEqualToString:strRTCPeerId]) {
+        if ([videoView.pubId isEqualToString:strRTCPeerId]) {
             if (!bAudio && !bVideo) {
                 [XHToast showCenterWithText:@"对方音视频关闭"];
                 return;
@@ -155,17 +155,16 @@
 }
 
 #pragma mark - AnyRTCWriteBlockDelegate
-- (void)onRTCSetWhiteBoardEnableResult:(BOOL)scuess{
-    
-
+- (void)onRTCCanUseShareEnableResult:(BOOL)scuess{
+    //判断是否可以开启共享
 }
 
-- (void)onRTCWhiteBoardOpen:(NSString*)strWBInfo withUserId:(NSString *)strUserId withUserData:(NSString*)strUserData{
-    
+- (void)onRTCUserShareOpen:(NSString*)strUserShareInfo withUserId:(NSString *)strUserId withUserData:(NSString*)strUserData{
+    //共享开启
 }
 
-- (void)OnRTCWhiteBoardClose{
-    
+- (void)OnRTCUserShareClose{
+    //共享关闭
 
 }
 
@@ -174,7 +173,7 @@
     ATVideoView *videoView = [ATVideoView loadVideoView];
     videoView.frame = CGRectZero;
     videoView.nameLabel.text = nameStr;
-    videoView.peerId = peerId;
+    videoView.pubId = peerId;
     
     WEAKSELF;
     videoView.videoBlock = ^(NSString *peerId) {
@@ -190,7 +189,7 @@
             
             CGFloat videoH = videoW  * video.videoSize.height/video.videoSize.width;
         
-            if ([video.peerId isEqualToString:peerId]) {
+            if ([video.pubId isEqualToString:peerId]) {
                 
                 displayView.frame = CGRectMake(weakSelf.showView.frame.origin.x, videoY - videoH, videoW, videoH);
                 video.tag = 0;
@@ -205,7 +204,7 @@
       //切换视图
         for (NSInteger i = 0; i < weakSelf.videoArr.count; i++) {
             ATVideoView *videoView = weakSelf.videoArr[i];
-            if ([videoView.peerId isEqualToString:peerId]) {
+            if ([videoView.pubId isEqualToString:peerId]) {
                 if (displayView == weakSelf.showView) {
                     displayView.frame = CGRectMake(videoView.frame.origin.x, videoY - videoW/weakSelf.scale, videoW, videoW/weakSelf.scale);
                 } else {
@@ -293,7 +292,7 @@
         case 101:
             //音频
             [self.meetKit setLocalAudioEnable:!sender.selected];
-            [self.meetKit closeWhiteBoard];
+            //[self.meetKit closeWhiteBoard];
             break;
         case 102:
             //挂断
@@ -307,7 +306,7 @@
         case 103:
             //视频
             [self.meetKit setLocalVideoEnable:!sender.selected];
-            [self.meetKit openWhiteBoard:@""];
+            //[self.meetKit openWhiteBoard:@""];
             break;
         default:
             break;

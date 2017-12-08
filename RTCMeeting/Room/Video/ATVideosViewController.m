@@ -8,7 +8,7 @@
 
 #import "ATVideosViewController.h"
 
-@interface ATVideosViewController ()<RTMeetKitDelegate,AnyRTCWriteBlockDelegate>
+@interface ATVideosViewController ()<RTMeetKitDelegate,AnyRTCUserShareBlockDelegate>
 
 //房间名
 @property (weak, nonatomic) IBOutlet UIButton *topicButton;
@@ -79,22 +79,22 @@
     }
 }
 
-- (void)onRTCOpenVideoRender:(NSString*)strRTCPeerId withUserId:(NSString*)strUserId withUserData:(NSString*)strUserData{
+-(void)onRTCOpenVideoRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId withUserData:(NSString*)strUserData{
     //其他与会者视频接通回调(音视频)
     NSDictionary *dict = [ATCommon fromJsonStr:strUserData];
     UIView *videoView = [self getVideoViewWithRTCPeerId:strRTCPeerId withNickName:[dict objectForKey:@"nickName"]];
     [self.view insertSubview:videoView atIndex:99];
     [self.videoArr addObject:videoView];
     
-    [self.meetKit setRTCVideoRender:strRTCPeerId andRender:videoView];
+    [self.meetKit setRTCVideoRender:strRTCPubId andRender:videoView];
 }
 
-- (void)onRTCCloseVideoRender:(NSString*)strRTCPeerId withUserId:(NSString *)strUserId{
+-(void)onRTCCloseVideoRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId{
     //其他会议者离开的回调（音视频）
     @synchronized (self.videoArr){
         for (NSInteger i = 0; i < self.videoArr.count; i++) {
             ATVideoView *videoView = self.videoArr[i];
-            if ([videoView.peerId isEqualToString:strRTCPeerId]) {
+            if ([videoView.pubId isEqualToString:strRTCPubId]) {
                 
                 [self.videoArr removeObjectAtIndex:i];
                 [videoView removeFromSuperview];
@@ -109,7 +109,7 @@
 - (void)onRTCAVStatus:(NSString*)strRTCPeerId withAudio:(BOOL)bAudio withVideo:(BOOL)bVideo{
     //其他与会者对音视频的操作的回调（比如对方关闭了音频，对方关闭了视频）
     for (ATVideoView *videoView in self.videoArr) {
-        if ([videoView.peerId isEqualToString:strRTCPeerId]) {
+        if ([videoView.pubId isEqualToString:strRTCPeerId]) {
             if (!bAudio && !bVideo) {
                 [XHToast showCenterWithText:@"对方音视频关闭"];
                 return;
@@ -149,22 +149,24 @@
 }
 
 #pragma mark - AnyRTCWriteBlockDelegate
-- (void)onRTCSetWhiteBoardEnableResult:(BOOL)scuess{
-    
+- (void)onRTCCanUseShareEnableResult:(BOOL)scuess{
+    //判断是否可以开启共享
 }
 
-- (void)onRTCWhiteBoardOpen:(NSString*)strWBInfo withUserId:(NSString *)strUserId withUserData:(NSString*)strUserData{
-    
+- (void)onRTCUserShareOpen:(NSString*)strUserShareInfo withUserId:(NSString *)strUserId withUserData:(NSString*)strUserData{
+    //共享开启
 }
-- (void)OnRTCWhiteBoardClose{
-    
+
+- (void)OnRTCUserShareClose{
+    //共享关闭
 }
+
 #pragma mark - 刷新显示视图
 - (UIView *)getVideoViewWithRTCPeerId:(NSString*)peerId withNickName:(NSString *)nameStr{
     ATVideoView *videoView = [ATVideoView loadVideoView];
     videoView.frame = CGRectZero;
     videoView.nameLabel.text = nameStr;
-    videoView.peerId = peerId;
+    videoView.pubId = peerId;
     return videoView;
 }
 

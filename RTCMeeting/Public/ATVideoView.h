@@ -13,7 +13,7 @@ typedef void(^VideoTapBlock)(NSString *peerId);
 @interface ATVideoView : UIView
 
 //唯一标识
-@property (nonatomic, copy)NSString *peerId;
+@property (nonatomic, copy)NSString *pubId;
 
 // 视图的分辨率大小
 @property (nonatomic, assign) CGSize videoSize;

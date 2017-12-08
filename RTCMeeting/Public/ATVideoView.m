@@ -22,7 +22,7 @@
 
 - (void)videoTap{
     if (self.videoBlock) {
-        self.videoBlock(self.peerId);
+        self.videoBlock(self.pubId);
     }
 }
 

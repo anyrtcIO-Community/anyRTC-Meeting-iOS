@@ -58,6 +58,7 @@ typedef enum {
 	RTCCall_EXP_OFFLINE,	// 通话中对方意外掉线
 	RTCCall_EXP_EXIT,		// 对方异常导致(如：重复登录帐号将此前的帐号踢出)
 	RTCCall_TIMEOUT,		// 呼叫超时(45秒)
+	RTCCall_NOT_SURPPORT,	// 不支持
 }RTCCallErrorCode;
 
 //Meet
@@ -87,7 +88,8 @@ typedef enum {
 typedef enum {
 	RTP2P_CALL_Video = 0,		//	默认视频呼叫
 	RTP2P_CALL_VideoPro = 1,	//	视频呼叫Pro模式: 被呼叫方可先看到对方视频
-	RTP2P_CALL_Audio  = 2		//	音频呼叫
+	RTP2P_CALL_Audio  = 2,		//	音频呼叫
+	RTP2P_CALL_VideoMon = 3		//	视频监看模式,此模式被叫端只能是Android
 }RTP2PCallMode;
 
 typedef enum {

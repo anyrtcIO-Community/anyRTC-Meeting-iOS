@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RTMeetAudioKitDelegate.h"
-#import "AnyRTCWriteBlockDelegate.h"
+#import "AnyRTCUserShareBlockDelegate.h"
 
 @interface RTMeetAudioKit : NSObject
 
@@ -77,17 +77,24 @@
 /**
  设置白板相关回调
  */
-@property (nonatomic, weak)id<AnyRTCWriteBlockDelegate>delegate;
+@property (nonatomic, weak)id<AnyRTCUserShareBlockDelegate>delegate;
 /**
- 打开白板
+ 判断是否可以共享
  
- @param strWBInfo 白板相关信息。(限制512字节)
+ @param nType 共享类型
+ 说明：类型，自己平台设定，比如1:为白板，２:为文档
+ */
+- (void)canShareUser:(int)nType;
+/**
+ 打开共享信息
+ 
+ @param strShearInfo 共享相关信息(限制512字节)
  说明：打开白板成功与失败，参考onRTCSetWhiteBoardEnableResult 回调方法
  */
-- (void)openWhiteBoard:(NSString *)strWBInfo;
+- (void)openUserShareInfo:(NSString *)strShearInfo;
 
 /**
- 关闭白板
+ 关闭共享
  */
-- (void)closeWhiteBoard;
+- (void)closeUserShare;
 @end

@@ -17,7 +17,7 @@
 #endif
 #import "RTMeetKitDelegate.h"
 #import "RTCCommon.h"
-#import "AnyRTCWriteBlockDelegate.h"
+#import "AnyRTCUserShareBlockDelegate.h"
 #import "RTMeetOption.h"
 
 @interface RTMeetKit : NSObject {
@@ -103,14 +103,14 @@
 /**
  设置显示其他端视频窗口
  
- @param strRTCPeerId RTC服务生成的与会者标识Id (用于标识用户，每次随机生成)；
+ @param strRTCPubId RTC服务生成流的ID (用于标识与会者发布的流)；
  @param render 对方视频的窗口，本地设置；
  说明：该方法用于与会者接通后，与会者视频接通回调中（OnRTCOpenVideoRender）使用。
  */
 #if TARGET_OS_IPHONE
-- (void)setRTCVideoRender:(NSString*)strRTCPeerId andRender:(UIView*)render;
+- (void)setRTCVideoRender:(NSString*)strRTCPubId andRender:(UIView*)render;
 #else
-- (void)setRTCVideoRender:(NSString*)strRTCPeerId andRender:(NSView*)render;
+- (void)setRTCVideoRender:(NSString*)strRTCPubId andRender:(NSView*)render;
 #endif
 
 #pragma mark - 消息
@@ -129,22 +129,29 @@
 #pragma mark - 白板功能模块
 
 /**
- 设置白板相关回调
+ 设置共享回调
  */
-@property (nonatomic, weak)id<AnyRTCWriteBlockDelegate>delegate;
+@property (nonatomic, weak)id<AnyRTCUserShareBlockDelegate>delegate;
 
 /**
- 打开白板
+ 判断是否可以共享
 
- @param strWBInfo 白板相关信息。(限制512字节)
+ @param nType 共享类型
+ 说明：类型，自己平台设定，比如1:为白板，２:为文档
+ */
+- (void)canShareUser:(int)nType;
+/**
+ 打开共享信息
+
+ @param strShearInfo 共享相关信息(限制512字节)
  说明：打开白板成功与失败，参考onRTCSetWhiteBoardEnableResult 回调方法
  */
-- (void)openWhiteBoard:(NSString *)strWBInfo;
+- (void)openUserShareInfo:(NSString *)strShearInfo;
 
 /**
- 关闭白板
+ 关闭共享
  */
-- (void)closeWhiteBoard;
+- (void)closeUserShare;
 @end
 
 #endif /* RTMeetKit_h */

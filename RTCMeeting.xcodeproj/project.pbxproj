@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6318CC1E1F9A092B0014A927 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6318CC1D1F9A092B0014A927 /* Images.xcassets */; };
+		631E8B5A1FDA9EE500D609B5 /* RTMeetEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631E8B591FDA9EE500D609B5 /* RTMeetEngine.framework */; };
+		631E8B5B1FDA9EEB00D609B5 /* RTMeetEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631E8B591FDA9EE500D609B5 /* RTMeetEngine.framework */; };
+		631E8B5C1FDA9EEB00D609B5 /* RTMeetEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 631E8B591FDA9EE500D609B5 /* RTMeetEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		632A258A1F8F731B00D51A5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 632A25891F8F731B00D51A5D /* AppDelegate.m */; };
 		632A25901F8F731B00D51A5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632A258E1F8F731B00D51A5D /* Main.storyboard */; };
 		632A25921F8F731B00D51A5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 632A25911F8F731B00D51A5D /* Assets.xcassets */; };
@@ -21,9 +24,6 @@
 		632E02611F9891F400C10BFE /* ATVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632E025E1F98904400C10BFE /* ATVideoViewController.m */; };
 		639350C71F90587F0093177B /* BaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639350C51F90587F0093177B /* BaseNavigationViewController.m */; };
 		639350CA1F9058EA0093177B /* ATMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639350C91F9058EA0093177B /* ATMainViewController.m */; };
-		639F2B6A1FC2C35A0019CA79 /* RTMeetEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639F2B691FC2C35A0019CA79 /* RTMeetEngine.framework */; };
-		639F2B6B1FC2C3620019CA79 /* RTMeetEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639F2B691FC2C35A0019CA79 /* RTMeetEngine.framework */; };
-		639F2B6C1FC2C3620019CA79 /* RTMeetEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 639F2B691FC2C35A0019CA79 /* RTMeetEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		639F9EC11F90618D005AEFB9 /* ATCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 630A50001F8F7493001D19E8 /* ATCommon.m */; };
 		639F9EC41F906251005AEFB9 /* ATHallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F9EC31F906251005AEFB9 /* ATHallViewController.m */; };
 		639F9EC71F906261005AEFB9 /* ATStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F9EC61F906261005AEFB9 /* ATStartViewController.m */; };
@@ -56,7 +56,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				639F2B6C1FC2C3620019CA79 /* RTMeetEngine.framework in Embed Frameworks */,
+				631E8B5C1FDA9EEB00D609B5 /* RTMeetEngine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +71,7 @@
 		630A50011F8F7493001D19E8 /* ATCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATCommon.h; sourceTree = "<group>"; };
 		630A50021F8F74BE001D19E8 /* RTCMeeting.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTCMeeting.pch; sourceTree = "<group>"; };
 		6318CC1D1F9A092B0014A927 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		631E8B591FDA9EE500D609B5 /* RTMeetEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTMeetEngine.framework; sourceTree = "<group>"; };
 		632A25851F8F731B00D51A5D /* RTCMeeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTCMeeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		632A25881F8F731B00D51A5D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		632A25891F8F731B00D51A5D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -98,7 +99,6 @@
 		639350C61F90587F0093177B /* BaseNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationViewController.h; sourceTree = "<group>"; };
 		639350C81F9058EA0093177B /* ATMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATMainViewController.h; sourceTree = "<group>"; };
 		639350C91F9058EA0093177B /* ATMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATMainViewController.m; sourceTree = "<group>"; };
-		639F2B691FC2C35A0019CA79 /* RTMeetEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTMeetEngine.framework; sourceTree = "<group>"; };
 		639F9EC21F906251005AEFB9 /* ATHallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATHallViewController.h; sourceTree = "<group>"; };
 		639F9EC31F906251005AEFB9 /* ATHallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATHallViewController.m; sourceTree = "<group>"; };
 		639F9EC51F906261005AEFB9 /* ATStartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATStartViewController.h; sourceTree = "<group>"; };
@@ -113,9 +113,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				639F2B6B1FC2C3620019CA79 /* RTMeetEngine.framework in Frameworks */,
+				631E8B5B1FDA9EEB00D609B5 /* RTMeetEngine.framework in Frameworks */,
 				B473BC1C078DF493542E5396 /* libPods-RTCMeeting.a in Frameworks */,
-				639F2B6A1FC2C35A0019CA79 /* RTMeetEngine.framework in Frameworks */,
+				631E8B5A1FDA9EE500D609B5 /* RTMeetEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				636B29161FA178D600B8C941 /* RTCMeeting.entitlements */,
-				639F2B691FC2C35A0019CA79 /* RTMeetEngine.framework */,
+				631E8B591FDA9EE500D609B5 /* RTMeetEngine.framework */,
 				630A4FFF1F8F7440001D19E8 /* Helpers */,
 				630A4FFE1F8F7436001D19E8 /* Main */,
 				632E02561F98904400C10BFE /* Room */,
