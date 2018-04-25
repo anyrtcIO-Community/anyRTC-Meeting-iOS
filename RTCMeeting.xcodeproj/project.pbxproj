@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6318CC1E1F9A092B0014A927 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6318CC1D1F9A092B0014A927 /* Images.xcassets */; };
-		631E8B5A1FDA9EE500D609B5 /* RTMeetEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631E8B591FDA9EE500D609B5 /* RTMeetEngine.framework */; };
-		631E8B5B1FDA9EEB00D609B5 /* RTMeetEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631E8B591FDA9EE500D609B5 /* RTMeetEngine.framework */; };
-		631E8B5C1FDA9EEB00D609B5 /* RTMeetEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 631E8B591FDA9EE500D609B5 /* RTMeetEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		632A258A1F8F731B00D51A5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 632A25891F8F731B00D51A5D /* AppDelegate.m */; };
 		632A25901F8F731B00D51A5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632A258E1F8F731B00D51A5D /* Main.storyboard */; };
 		632A25921F8F731B00D51A5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 632A25911F8F731B00D51A5D /* Assets.xcassets */; };
@@ -56,7 +53,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				631E8B5C1FDA9EEB00D609B5 /* RTMeetEngine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,7 +67,6 @@
 		630A50011F8F7493001D19E8 /* ATCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATCommon.h; sourceTree = "<group>"; };
 		630A50021F8F74BE001D19E8 /* RTCMeeting.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTCMeeting.pch; sourceTree = "<group>"; };
 		6318CC1D1F9A092B0014A927 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		631E8B591FDA9EE500D609B5 /* RTMeetEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTMeetEngine.framework; sourceTree = "<group>"; };
 		632A25851F8F731B00D51A5D /* RTCMeeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTCMeeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		632A25881F8F731B00D51A5D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		632A25891F8F731B00D51A5D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -113,9 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				631E8B5B1FDA9EEB00D609B5 /* RTMeetEngine.framework in Frameworks */,
 				B473BC1C078DF493542E5396 /* libPods-RTCMeeting.a in Frameworks */,
-				631E8B5A1FDA9EE500D609B5 /* RTMeetEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				636B29161FA178D600B8C941 /* RTCMeeting.entitlements */,
-				631E8B591FDA9EE500D609B5 /* RTMeetEngine.framework */,
 				630A4FFF1F8F7440001D19E8 /* Helpers */,
 				630A4FFE1F8F7436001D19E8 /* Main */,
 				632E02561F98904400C10BFE /* Room */,
@@ -292,7 +284,6 @@
 				632A25821F8F731B00D51A5D /* Frameworks */,
 				632A25831F8F731B00D51A5D /* Resources */,
 				8147C02B880B75677CA59790 /* [CP] Embed Pods Frameworks */,
-				CDE481A2D6E74A1B7DCF67E6 /* [CP] Copy Pods Resources */,
 				639350C41F9055BF0093177B /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -346,7 +337,7 @@
 		632A257D1F8F731B00D51A5D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = jh;
 				TargetAttributes = {
 					632A25841F8F731B00D51A5D = {
@@ -432,13 +423,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RTCMeeting-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8147C02B880B75677CA59790 /* [CP] Embed Pods Frameworks */ = {
@@ -447,28 +441,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RTCMeeting/Pods-RTCMeeting-frameworks.sh",
+				"${PODS_ROOT}/RTMeetEngine/RTMeetEngine/RTMeetEngine.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RTMeetEngine.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RTCMeeting/Pods-RTCMeeting-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CDE481A2D6E74A1B7DCF67E6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RTCMeeting/Pods-RTCMeeting-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

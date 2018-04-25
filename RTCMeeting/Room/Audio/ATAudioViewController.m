@@ -58,13 +58,13 @@
 
 - (void)itializationMeetKit{
     //实例化会议对象
-    self.meetKit = [[RTMeetAudioKit alloc] initWithDelegate:self];
+    self.meetKit = [[RTMeetAudioKit alloc]initWithDelegate:self withMeetingType:AnyMeetingTypeNomal];
 
     NSDictionary *customDict = [NSDictionary dictionaryWithObjectsAndKeys:self.userName,@"nickName",nil];
     NSString *customStr = [ATCommon fromDicToJSONStr:customDict];
     self.userId = [ATCommon randomString:6];
     //加入会议
-    [self.meetKit joinRTC:self.anyRTCId andUserId:self.userId andUserData:customStr];
+    [self.meetKit joinRTC:self.anyRTCId andIsHoster:NO andUserId:self.userId andUserData:customStr];
 }
 
 #pragma mark - RTMeetKitDelegate

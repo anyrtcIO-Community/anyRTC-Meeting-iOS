@@ -1,18 +1,28 @@
 PODS:
   - Bugly (2.5.0)
   - Masonry (1.1.0)
+  - RTMeetEngine (0.0.2)
   - XHToast (1.4.0)
 
 DEPENDENCIES:
   - Bugly
   - Masonry
+  - RTMeetEngine
   - XHToast (~> 1.4.0)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Bugly
+    - Masonry
+    - RTMeetEngine
+    - XHToast
+
 SPEC CHECKSUMS:
-  Bugly: 00c8701f2bebab4887771ba43afbf51334009742
+  Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  RTMeetEngine: c4d8ae61f8e7f7f9a13f45a121cbb1488ed171b6
   XHToast: 3b354766d56d9df8fef8e64387bbd25c90d71a86
 
-PODFILE CHECKSUM: db15b1deab79710768375764a46394a7eb6a913e
+PODFILE CHECKSUM: a920df2ce7ac83a5e001a19b734ccbb1f98e36d9
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.5.0

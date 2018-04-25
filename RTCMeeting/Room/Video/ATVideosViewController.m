@@ -25,6 +25,14 @@
 @property (nonatomic, strong)NSMutableArray *videoArr;
 
 @property (nonatomic, copy)NSString *anyRTCId;
+//web是否开启屏幕共享
+@property (nonatomic, assign)NSInteger isScreenIndex;
+//web共享view
+@property (nonatomic, strong)UIView *screenView;
+//共享PubId
+@property (nonatomic, copy)NSString *pubId;
+//是否旋转
+@property (nonatomic, assign)BOOL isRotation;
 @end
 
 @implementation ATVideosViewController
@@ -57,7 +65,7 @@
     [self.meetKit setAudioActiveCheck:YES];
     
     //加入会议
-    [self.meetKit joinRTC:self.anyRTCId andUserId:[ATCommon randomString:6] andUserData:customStr];
+    [self.meetKit joinRTC:self.anyRTCId andIsHoster:NO andUserId:[ATCommon randomString:6] andUserData:customStr];
 }
 
 #pragma mark - RTMeetKitDelegate
@@ -82,11 +90,22 @@
 -(void)onRTCOpenVideoRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId withUserData:(NSString*)strUserData{
     //其他与会者视频接通回调(音视频)
     NSDictionary *dict = [ATCommon fromJsonStr:strUserData];
-    UIView *videoView = [self getVideoViewWithRTCPeerId:strRTCPeerId withNickName:[dict objectForKey:@"nickName"]];
-    [self.view insertSubview:videoView atIndex:99];
-    [self.videoArr addObject:videoView];
-    
-    [self.meetKit setRTCVideoRender:strRTCPubId andRender:videoView];
+    @synchronized (self.videoArr){
+        for (NSInteger i = 0; i < self.videoArr.count; i++) {
+            ATVideoView *videoView = self.videoArr[i];
+            if ([videoView.peerId isEqualToString:strRTCPeerId]) {
+                self.pubId = strRTCPubId;//屏幕共享流id
+                [XHToast showCenterWithText:[NSString stringWithFormat:@"%@ 打开了屏幕共享",videoView.nameLabel.text]];
+                self.isScreenIndex ++;
+                return;
+            }
+        }
+        UIView *videoView = [self getVideoViewWithRTCPubId:strRTCPubId andPeerId:strRTCPeerId withNickName:[dict objectForKey:@"nickName"]];
+        [self.view insertSubview:videoView atIndex:1];
+        [self.videoArr addObject:videoView];
+        
+        [self.meetKit setRTCVideoRender:strRTCPubId andRender:videoView];
+    }
 }
 
 -(void)onRTCCloseVideoRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId{
@@ -109,7 +128,7 @@
 - (void)onRTCAVStatus:(NSString*)strRTCPeerId withAudio:(BOOL)bAudio withVideo:(BOOL)bVideo{
     //其他与会者对音视频的操作的回调（比如对方关闭了音频，对方关闭了视频）
     for (ATVideoView *videoView in self.videoArr) {
-        if ([videoView.pubId isEqualToString:strRTCPeerId]) {
+        if ([videoView.peerId isEqualToString:strRTCPeerId]) {
             if (!bAudio && !bVideo) {
                 [XHToast showCenterWithText:@"对方音视频关闭"];
                 return;
@@ -145,7 +164,22 @@
 
 - (void)onRTCUserMessage:(NSString*)strUserId withUserName:(NSString*)strUserName withUserHeader:(NSString*)strUserHeaderUrl withContent:(NSString*)strContent{
     //收到消息回调
-    
+}
+
+- (void)onRTCHosterOnLine:(NSString*)strRTCPeerId withUserId:(NSString*)strUserId withUserData:(NSString*)strUserData{
+    //主持人上线
+}
+
+- (void)onRTCHosterOffLine:(NSString*)strRTCPeerId{
+    //主持人下线
+}
+
+- (void)onRTCTalkOnlyOn:(NSString*)strRTCPeerId withUserId:(NSString*)strUserId withUserData:(NSString*)strUserData{
+    //1v1开启
+}
+
+- (void)onRtcTalkOnlyOff:(NSString*)strRTCPeerId{
+    //1v1关闭
 }
 
 #pragma mark - AnyRTCWriteBlockDelegate
@@ -153,7 +187,7 @@
     //判断是否可以开启共享
 }
 
-- (void)onRTCUserShareOpen:(NSString*)strUserShareInfo withUserId:(NSString *)strUserId withUserData:(NSString*)strUserData{
+- (void)onRTCUserShareOpen:(int)nType withShareInfo:(NSString*)strUserShareInfo withUserId:(NSString *)strUserId withUserData:(NSString*)strUserData{
     //共享开启
 }
 
@@ -162,11 +196,12 @@
 }
 
 #pragma mark - 刷新显示视图
-- (UIView *)getVideoViewWithRTCPeerId:(NSString*)peerId withNickName:(NSString *)nameStr{
+- (UIView *)getVideoViewWithRTCPubId:(NSString*)pubId andPeerId:(NSString *)peerId withNickName:(NSString *)nameStr{
     ATVideoView *videoView = [ATVideoView loadVideoView];
     videoView.frame = CGRectZero;
     videoView.nameLabel.text = nameStr;
-    videoView.pubId = peerId;
+    videoView.peerId = peerId;
+    videoView.pubId = pubId;
     return videoView;
 }
 
@@ -228,6 +263,16 @@
 
 #pragma mark - event
 - (IBAction)doSomethingEvents:(UIButton *)sender {
+    if (sender.selected && (sender.tag == 104)) {
+        self.screenView.hidden = YES;
+        sender.selected = NO;
+        self.isRotation = YES;
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        appDelegate.allowRotation = YES;
+        [self toOrientation:UIInterfaceOrientationPortrait];
+        return;
+    }
+    
     sender.selected = !sender.selected;
     switch (sender.tag) {
         case 100:
@@ -240,30 +285,99 @@
             break;
         case 102:
             //挂断
+        {
             [self.meetKit leaveRTC];
+            AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            appDelegate.allowRotation = YES;
+            [self toOrientation:UIInterfaceOrientationPortrait];
             [self dismissViewControllerAnimated:YES completion:nil];
+        }
             break;
         case 103:
             //视频
             [self.meetKit setLocalVideoEnable:!sender.selected];
             break;
+        case 104:
+            //共享
+            if (self.isScreenIndex != 0) {
+                //显示共享屏幕（横屏）
+                self.isRotation = YES;
+                AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                appDelegate.allowRotation = YES;
+                [self toOrientation:UIInterfaceOrientationLandscapeRight];
+                if (self.screenView.hidden) {
+                    self.screenView.hidden = NO;
+                    return;
+                }
+                
+                [self.view insertSubview:self.screenView atIndex:2];
+                self.screenView.backgroundColor = [UIColor clearColor];
+                [self.screenView mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+                }];
+                [self.meetKit setRTCVideoRender:self.pubId andRender:self.screenView];
+            } else {
+                [XHToast showCenterWithText:@"当前无人发起屏幕共享"];
+                sender.selected = NO;
+            }
         default:
             break;
     }
 }
 
-#pragma mark - other
+#pragma mark - 旋转
 - (BOOL)shouldAutorotate{
     [super shouldAutorotate];
+    if (self.isRotation) {
+        return YES;
+    }
     return NO;
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    
+    return UIInterfaceOrientationMaskAllButUpsideDown;
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+        
+    } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+        [self layoutVideoView];
+    }];
+}
+
+-(void)toOrientation:(UIInterfaceOrientation)orientation{
+    
+    [UIView beginAnimations:nil context:nil];
+    
+    // 旋转屏幕
+    NSNumber *value = [NSNumber numberWithInt:orientation];
+    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+    [UIView setAnimationDelegate:self];
+    //开始旋转
+    [UIView commitAnimations];
+    [self.view layoutIfNeeded];
+    self.isRotation = NO;
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.allowRotation = NO;
+}
+
+#pragma mark - other
 - (UIView *)showView{
     if (!_showView) {
         _showView = [[UIView alloc]init];
         _showView.frame = self.view.frame;
     }
     return _showView;
+}
+
+- (UIView *)screenView{
+    if (!_screenView) {
+        _screenView = [[UIView alloc]init];
+    }
+    return _screenView;
 }
 
 - (NSMutableArray *)videoArr{

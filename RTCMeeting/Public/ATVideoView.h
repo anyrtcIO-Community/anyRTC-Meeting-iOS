@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^VideoTapBlock)(NSString *peerId);
+typedef void(^VideoTapBlock)(NSString *pubId);
 
 @interface ATVideoView : UIView
 
-//唯一标识
+//流的唯一标识
 @property (nonatomic, copy)NSString *pubId;
+
+@property (nonatomic, copy)NSString *peerId;
 
 // 视图的分辨率大小
 @property (nonatomic, assign) CGSize videoSize;

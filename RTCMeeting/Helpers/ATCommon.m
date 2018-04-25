@@ -23,6 +23,7 @@
     }
     return JSONStr;
 }
+
 + (id)fromJsonStr:(NSString*)jsonStrong {
     if ([jsonStrong isKindOfClass:[NSDictionary class]]) {
         return jsonStrong;
