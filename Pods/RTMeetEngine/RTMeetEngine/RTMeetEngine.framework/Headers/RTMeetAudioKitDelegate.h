@@ -76,6 +76,15 @@
 -(void)onRTCAudioActive:(NSString*)strRTCPeerId withUserId:(NSString *)strUserId withShowTime:(int)nTime;
 
 @optional
+/**
+ 网络状态
+ 
+ @param strRTCPeerId RTC服务生成的与会者标识Id（用于标识与会者用户，每次随机生成）
+ @param strUserId 连麦者在自己平台的用户Id；
+ @param nNetSpeed 网络上行
+ @param nPacketLost 丢包率
+ */
+- (void)onRtcNetworkStatus:(NSString*)strRTCPeerId withUserId:(NSString *)strUserId withNetSpeed:(int)nNetSpeed withPacketLost:(int)nPacketLost;
 
 /**
  收到消息回调

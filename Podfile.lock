@@ -1,13 +1,13 @@
 PODS:
   - Bugly (2.5.0)
   - Masonry (1.1.0)
-  - RTMeetEngine (0.0.2)
+  - RTMeetEngine (1.0.1)
   - XHToast (1.4.0)
 
 DEPENDENCIES:
   - Bugly
   - Masonry
-  - RTMeetEngine
+  - RTMeetEngine (~> 1.0.1)
   - XHToast (~> 1.4.0)
 
 SPEC REPOS:
@@ -20,9 +20,9 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  RTMeetEngine: c4d8ae61f8e7f7f9a13f45a121cbb1488ed171b6
+  RTMeetEngine: f9b9fe96b04d3e3c6b10a5923a79d627b1726b27
   XHToast: 3b354766d56d9df8fef8e64387bbd25c90d71a86
 
-PODFILE CHECKSUM: a920df2ce7ac83a5e001a19b734ccbb1f98e36d9
+PODFILE CHECKSUM: d6a7ea52145687d4b716395ade7cd1795251a096
 
 COCOAPODS: 1.5.0

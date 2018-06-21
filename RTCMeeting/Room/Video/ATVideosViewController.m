@@ -162,6 +162,10 @@
     }
 }
 
+- (void)onRtcNetworkStatus:(NSString*)strRTCPeerId withUserId:(NSString *)strUserId withNetSpeed:(int)nNetSpeed withPacketLost:(int)nPacketLost{
+    //网络状态
+}
+
 - (void)onRTCUserMessage:(NSString*)strUserId withUserName:(NSString*)strUserName withUserHeader:(NSString*)strUserHeaderUrl withContent:(NSString*)strContent{
     //收到消息回调
 }
@@ -393,7 +397,7 @@
         //设置显示模式
         _option.videoLayOut = RTC_V_3X3_auto;
         //设置视频方向
-        _option.videoScreenOrientation = RTMPC_SCRN_Portrait;
+        _option.videoScreenOrientation = RTC_SCRN_Portrait;
     }
     return _option;
 }

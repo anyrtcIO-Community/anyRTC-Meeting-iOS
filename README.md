@@ -15,11 +15,12 @@ Xcode 8以上</br>
 ### Cocoapods导入
 ```
 pod 'RTMeetEngine'
-
 ```
 ### 手动导入
 
-1. 前往[anyRTC官网](https://www.anyrtc.io/resoure)下载SDK
+1. 下载Demo，或者前往[anyRTC官网](https://www.anyrtc.io/resoure)下载SDK
+![list_directory](/image/list_directory.png)
+
 
 2. 在Xcode中选择“Add files to 'Your project name'...”，将RTMeetEngine.framework添加到你的工程目录中</br>
 
@@ -43,9 +44,9 @@ pod 'RTMeetEngine'
 
 
 ## 项目展示
-![RTCMeeting](RTCMeeting.gif)
+![RTCMeeting](/image/RTCMeeting.gif)
 ## 扫描二维码下载demo
-![RTCMeeting](RTCMeeting.png)
+![RTCMeeting](/image/RTCMeeting.png)
 
 
 ## 支持的系统平台

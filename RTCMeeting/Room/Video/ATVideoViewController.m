@@ -170,6 +170,10 @@
     }
 }
 
+- (void)onRtcNetworkStatus:(NSString*)strRTCPeerId withUserId:(NSString *)strUserId withNetSpeed:(int)nNetSpeed withPacketLost:(int)nPacketLost{
+    //网络状态
+}
+
 - (void)onRTCUserMessage:(NSString*)strUserId withUserName:(NSString*)strUserName withUserHeader:(NSString*)strUserHeaderUrl withContent:(NSString*)strContent{
     //收到消息回调
 }
@@ -478,21 +482,21 @@
         //设置显示模式
         _option.videoLayOut = RTC_V_1X3;
         //设置视频方向
-        _option.videoScreenOrientation = RTMPC_SCRN_Auto;
+        _option.videoScreenOrientation = RTC_SCRN_Auto;
         
         //视频质量
         switch (self.typeMode) {
                 case RTCMeeting_360P:
                 [self.topicButton setTitle:@"四人会议室 - 360P" forState:UIControlStateNormal];
-                _option.videoMode = RTCMeet_Videos_Low;
+                _option.videoMode = AnyRTCVideoQuality_Low2;
                 break;
                 case RTCMeeting_720P:
                 [self.topicButton setTitle:@"四人会议室 - 720P" forState:UIControlStateNormal];
-                _option.videoMode = RTCMeet_Videos_QHD;
+                _option.videoMode = AnyRTCVideoQuality_Height1;
                 break;
                 case RTCMeeting_1080P:
                 [self.topicButton setTitle:@"四人会议室 - 1080P" forState:UIControlStateNormal];
-                _option.videoMode = RTCMeet_Videos_HD;
+                _option.videoMode = AnyRTCVideoQuality_Height2;
                 break;
             default:
                 break;
