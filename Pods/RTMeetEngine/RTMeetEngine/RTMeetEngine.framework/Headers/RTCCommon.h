@@ -195,6 +195,13 @@ typedef enum {
     RTMPC_Nomal_Message_Type = 0,//普通文本消息
     RTMPC_Barrage_Message_Type = 1   //弹幕消息
 }RTMPCMessageType;
+
+// 相机类型
+typedef enum {
+    AnyRTCCameraTypeNomal = 0,
+    AnyRTCCameraTypeBeauty = 1
+}AnyRTCCameraType;
+
 //滤镜常量
 typedef enum : char {
     //美颜滤镜
@@ -205,6 +212,16 @@ typedef enum : char {
     AnyCameraDeviceFilter_GaussianBlur=2
     
 } AnyCameraDeviceFilter;
+
+typedef enum {
+    //表示按比例缩放并且填满view，意味着图片可能超出view，可能被裁减掉
+    AnyRTCVideoRenderScaleAspectFill = 0,
+    //表示通过缩放来填满view，也就是说图片会变形
+    AnyRTCVideoRenderScaleToFill,
+    //表示按比例缩放并且图片要完全显示出来，意味着view可能会留有空白
+    AnyRTCVideoRenderScaleAspectFit
+    
+}AnyRTCVideoRenderMode;
 
 
 #endif	// __RTC_COMMON_H__

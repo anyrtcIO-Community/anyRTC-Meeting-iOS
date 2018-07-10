@@ -63,4 +63,6 @@ typedef enum : NSInteger {
 
 #import "AppDelegate.h"
 
+#import "UIViewController+Common.h"
+
 #endif /* RTCMeeting_pch */

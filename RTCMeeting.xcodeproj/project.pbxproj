@@ -14,18 +14,19 @@
 		632A25981F8F731B00D51A5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 632A25971F8F731B00D51A5D /* main.m */; };
 		632A25A21F8F731B00D51A5D /* RTCMeetingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 632A25A11F8F731B00D51A5D /* RTCMeetingTests.m */; };
 		632A25AD1F8F731B00D51A5D /* RTCMeetingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 632A25AC1F8F731B00D51A5D /* RTCMeetingUITests.m */; };
-		632D9F881F944C9C003B3ABC /* ATVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 632D9F871F944C9C003B3ABC /* ATVideoView.m */; };
-		632D9F8A1F944CAC003B3ABC /* ATVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632D9F891F944CAC003B3ABC /* ATVideoView.xib */; };
 		632E025F1F9891DB00C10BFE /* ATAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632E02591F98904400C10BFE /* ATAudioViewController.m */; };
 		632E02601F9891E300C10BFE /* ATVideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632E025C1F98904400C10BFE /* ATVideosViewController.m */; };
-		632E02611F9891F400C10BFE /* ATVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632E025E1F98904400C10BFE /* ATVideoViewController.m */; };
+		635AE44220EF053B00EB4937 /* ATVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635AE44120EF053B00EB4937 /* ATVideoViewController.m */; };
+		635AE44520EF60D300EB4937 /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 635AE44420EF60D300EB4937 /* UIViewController+Common.m */; };
 		639350C71F90587F0093177B /* BaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639350C51F90587F0093177B /* BaseNavigationViewController.m */; };
 		639350CA1F9058EA0093177B /* ATMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639350C91F9058EA0093177B /* ATMainViewController.m */; };
 		639F9EC11F90618D005AEFB9 /* ATCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 630A50001F8F7493001D19E8 /* ATCommon.m */; };
 		639F9EC41F906251005AEFB9 /* ATHallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F9EC31F906251005AEFB9 /* ATHallViewController.m */; };
 		639F9EC71F906261005AEFB9 /* ATStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F9EC61F906261005AEFB9 /* ATStartViewController.m */; };
-		63C7EFCF1F9608CB007B7347 /* ATVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C7EFCE1F9608CB007B7347 /* ATVoiceView.m */; };
-		63C7EFD11F9608D4007B7347 /* ATVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63C7EFD01F9608D4007B7347 /* ATVoiceView.xib */; };
+		63E9D4DE20F497E9004328E3 /* ATVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E9D4D920F497E8004328E3 /* ATVoiceView.m */; };
+		63E9D4DF20F497E9004328E3 /* ATVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E9D4DA20F497E8004328E3 /* ATVoiceView.xib */; };
+		63E9D4E020F497E9004328E3 /* ATVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E9D4DB20F497E8004328E3 /* ATVideoView.m */; };
+		63E9D4E120F497E9004328E3 /* ATVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E9D4DD20F497E9004328E3 /* ATVideoView.xib */; };
 		B473BC1C078DF493542E5396 /* libPods-RTCMeeting.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51229EB4F6781C2BE94D72B5 /* libPods-RTCMeeting.a */; };
 /* End PBXBuildFile section */
 
@@ -80,15 +81,14 @@
 		632A25A81F8F731B00D51A5D /* RTCMeetingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RTCMeetingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		632A25AC1F8F731B00D51A5D /* RTCMeetingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTCMeetingUITests.m; sourceTree = "<group>"; };
 		632A25AE1F8F731B00D51A5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		632D9F861F944C9C003B3ABC /* ATVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATVideoView.h; sourceTree = "<group>"; };
-		632D9F871F944C9C003B3ABC /* ATVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATVideoView.m; sourceTree = "<group>"; };
-		632D9F891F944CAC003B3ABC /* ATVideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ATVideoView.xib; sourceTree = "<group>"; };
 		632E02581F98904400C10BFE /* ATAudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATAudioViewController.h; sourceTree = "<group>"; };
 		632E02591F98904400C10BFE /* ATAudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATAudioViewController.m; sourceTree = "<group>"; };
 		632E025B1F98904400C10BFE /* ATVideosViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATVideosViewController.h; sourceTree = "<group>"; };
 		632E025C1F98904400C10BFE /* ATVideosViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATVideosViewController.m; sourceTree = "<group>"; };
-		632E025D1F98904400C10BFE /* ATVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATVideoViewController.h; sourceTree = "<group>"; };
-		632E025E1F98904400C10BFE /* ATVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATVideoViewController.m; sourceTree = "<group>"; };
+		635AE44020EF053B00EB4937 /* ATVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATVideoViewController.h; sourceTree = "<group>"; };
+		635AE44120EF053B00EB4937 /* ATVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATVideoViewController.m; sourceTree = "<group>"; };
+		635AE44320EF60D300EB4937 /* UIViewController+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Common.h"; sourceTree = "<group>"; };
+		635AE44420EF60D300EB4937 /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Common.m"; sourceTree = "<group>"; };
 		636B29161FA178D600B8C941 /* RTCMeeting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RTCMeeting.entitlements; sourceTree = "<group>"; };
 		639350C51F90587F0093177B /* BaseNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationViewController.m; sourceTree = "<group>"; };
 		639350C61F90587F0093177B /* BaseNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationViewController.h; sourceTree = "<group>"; };
@@ -98,9 +98,12 @@
 		639F9EC31F906251005AEFB9 /* ATHallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATHallViewController.m; sourceTree = "<group>"; };
 		639F9EC51F906261005AEFB9 /* ATStartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATStartViewController.h; sourceTree = "<group>"; };
 		639F9EC61F906261005AEFB9 /* ATStartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATStartViewController.m; sourceTree = "<group>"; };
-		63C7EFCD1F9608CB007B7347 /* ATVoiceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATVoiceView.h; sourceTree = "<group>"; };
-		63C7EFCE1F9608CB007B7347 /* ATVoiceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATVoiceView.m; sourceTree = "<group>"; };
-		63C7EFD01F9608D4007B7347 /* ATVoiceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ATVoiceView.xib; sourceTree = "<group>"; };
+		63E9D4D820F497E7004328E3 /* ATVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATVideoView.h; sourceTree = "<group>"; };
+		63E9D4D920F497E8004328E3 /* ATVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATVoiceView.m; sourceTree = "<group>"; };
+		63E9D4DA20F497E8004328E3 /* ATVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATVoiceView.xib; sourceTree = "<group>"; };
+		63E9D4DB20F497E8004328E3 /* ATVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATVideoView.m; sourceTree = "<group>"; };
+		63E9D4DC20F497E9004328E3 /* ATVoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATVoiceView.h; sourceTree = "<group>"; };
+		63E9D4DD20F497E9004328E3 /* ATVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATVideoView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,19 +132,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		630A4FFD1F8F7431001D19E8 /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				632D9F861F944C9C003B3ABC /* ATVideoView.h */,
-				632D9F871F944C9C003B3ABC /* ATVideoView.m */,
-				632D9F891F944CAC003B3ABC /* ATVideoView.xib */,
-				63C7EFCD1F9608CB007B7347 /* ATVoiceView.h */,
-				63C7EFCE1F9608CB007B7347 /* ATVoiceView.m */,
-				63C7EFD01F9608D4007B7347 /* ATVoiceView.xib */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
 		630A4FFE1F8F7436001D19E8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +150,8 @@
 			children = (
 				630A50011F8F7493001D19E8 /* ATCommon.h */,
 				630A50001F8F7493001D19E8 /* ATCommon.m */,
+				635AE44320EF60D300EB4937 /* UIViewController+Common.h */,
+				635AE44420EF60D300EB4937 /* UIViewController+Common.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -193,11 +185,7 @@
 				630A4FFF1F8F7440001D19E8 /* Helpers */,
 				630A4FFE1F8F7436001D19E8 /* Main */,
 				632E02561F98904400C10BFE /* Room */,
-				630A4FFD1F8F7431001D19E8 /* Public */,
-				632A25881F8F731B00D51A5D /* AppDelegate.h */,
-				632A25891F8F731B00D51A5D /* AppDelegate.m */,
-				639350C61F90587F0093177B /* BaseNavigationViewController.h */,
-				639350C51F90587F0093177B /* BaseNavigationViewController.m */,
+				63E9D4E220F497FB004328E3 /* Base */,
 				632A258E1F8F731B00D51A5D /* Main.storyboard */,
 				632A25911F8F731B00D51A5D /* Assets.xcassets */,
 				632A25961F8F731B00D51A5D /* Info.plist */,
@@ -231,6 +219,7 @@
 			children = (
 				632E025A1F98904400C10BFE /* Video */,
 				632E02571F98904400C10BFE /* Audio */,
+				63E9D4CD20F497B6004328E3 /* Common */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -247,12 +236,36 @@
 		632E025A1F98904400C10BFE /* Video */ = {
 			isa = PBXGroup;
 			children = (
-				632E025D1F98904400C10BFE /* ATVideoViewController.h */,
-				632E025E1F98904400C10BFE /* ATVideoViewController.m */,
+				635AE44020EF053B00EB4937 /* ATVideoViewController.h */,
+				635AE44120EF053B00EB4937 /* ATVideoViewController.m */,
 				632E025B1F98904400C10BFE /* ATVideosViewController.h */,
 				632E025C1F98904400C10BFE /* ATVideosViewController.m */,
 			);
 			path = Video;
+			sourceTree = "<group>";
+		};
+		63E9D4CD20F497B6004328E3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				63E9D4D820F497E7004328E3 /* ATVideoView.h */,
+				63E9D4DB20F497E8004328E3 /* ATVideoView.m */,
+				63E9D4DD20F497E9004328E3 /* ATVideoView.xib */,
+				63E9D4DC20F497E9004328E3 /* ATVoiceView.h */,
+				63E9D4D920F497E8004328E3 /* ATVoiceView.m */,
+				63E9D4DA20F497E8004328E3 /* ATVoiceView.xib */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		63E9D4E220F497FB004328E3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				632A25881F8F731B00D51A5D /* AppDelegate.h */,
+				632A25891F8F731B00D51A5D /* AppDelegate.m */,
+				639350C61F90587F0093177B /* BaseNavigationViewController.h */,
+				639350C51F90587F0093177B /* BaseNavigationViewController.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		A9E895B1ED46B974AA104B8E /* Pods */ = {
@@ -283,8 +296,8 @@
 				632A25811F8F731B00D51A5D /* Sources */,
 				632A25821F8F731B00D51A5D /* Frameworks */,
 				632A25831F8F731B00D51A5D /* Resources */,
-				8147C02B880B75677CA59790 /* [CP] Embed Pods Frameworks */,
 				639350C41F9055BF0093177B /* Embed Frameworks */,
+				3D79C2AA7E2ACD2769E606CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -393,10 +406,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				632A25921F8F731B00D51A5D /* Assets.xcassets in Resources */,
+				63E9D4E120F497E9004328E3 /* ATVideoView.xib in Resources */,
 				632A25901F8F731B00D51A5D /* Main.storyboard in Resources */,
+				63E9D4DF20F497E9004328E3 /* ATVoiceView.xib in Resources */,
 				6318CC1E1F9A092B0014A927 /* Images.xcassets in Resources */,
-				63C7EFD11F9608D4007B7347 /* ATVoiceView.xib in Resources */,
-				632D9F8A1F944CAC003B3ABC /* ATVideoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +448,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8147C02B880B75677CA59790 /* [CP] Embed Pods Frameworks */ = {
+		3D79C2AA7E2ACD2769E606CF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -460,18 +473,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				632E02611F9891F400C10BFE /* ATVideoViewController.m in Sources */,
 				632E02601F9891E300C10BFE /* ATVideosViewController.m in Sources */,
+				635AE44220EF053B00EB4937 /* ATVideoViewController.m in Sources */,
 				632E025F1F9891DB00C10BFE /* ATAudioViewController.m in Sources */,
-				632D9F881F944C9C003B3ABC /* ATVideoView.m in Sources */,
 				639F9EC11F90618D005AEFB9 /* ATCommon.m in Sources */,
 				639F9EC71F906261005AEFB9 /* ATStartViewController.m in Sources */,
 				632A25981F8F731B00D51A5D /* main.m in Sources */,
-				63C7EFCF1F9608CB007B7347 /* ATVoiceView.m in Sources */,
 				639350C71F90587F0093177B /* BaseNavigationViewController.m in Sources */,
 				639350CA1F9058EA0093177B /* ATMainViewController.m in Sources */,
 				639F9EC41F906251005AEFB9 /* ATHallViewController.m in Sources */,
 				632A258A1F8F731B00D51A5D /* AppDelegate.m in Sources */,
+				63E9D4E020F497E9004328E3 /* ATVideoView.m in Sources */,
+				63E9D4DE20F497E9004328E3 /* ATVoiceView.m in Sources */,
+				635AE44520EF60D300EB4937 /* UIViewController+Common.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,7 +648,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5543CP4MRT;
@@ -661,7 +675,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5543CP4MRT;

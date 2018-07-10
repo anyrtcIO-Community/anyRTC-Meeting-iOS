@@ -8,7 +8,7 @@
 
 #import "ATVideoViewController.h"
 
-@interface ATVideoViewController ()<RTMeetKitDelegate,AnyRTCUserShareBlockDelegate>
+@interface ATVideoViewController ()<RTMeetKitDelegate,AnyRTCUserShareBlockDelegate,SwitchDelegate>
 
 //房间名
 @property (weak, nonatomic) IBOutlet UIButton *topicButton;
@@ -17,11 +17,15 @@
 //屏幕共享按钮
 @property (weak, nonatomic) IBOutlet UIButton *screenButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *videoButton;
+
 @property (nonatomic, strong)RTMeetKit *meetKit;
 //配置信息
 @property (nonatomic, strong)RTMeetOption *option;
 //本地显示窗口
-@property (nonatomic, strong)UIView *showView;
+@property (nonatomic, strong)UIView *localView;
+//容器
+@property (nonatomic, strong) UIView *containerView;
 
 @property (nonatomic, strong)NSMutableArray *videoArr;
 
@@ -42,12 +46,14 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
+    
+    self.videoArr = [NSMutableArray arrayWithCapacity:4];
+    
     self.isRotation = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hidesKeyControl)];
     [self.view addGestureRecognizer:tap];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.allowRotation = YES;
-    [self.view insertSubview:self.showView atIndex:0];
     
     self.anyRTCId = [NSString stringWithFormat:@"anymeeting1000%ld",(long)self.typeMode];
     
@@ -58,22 +64,54 @@
 }
 
 - (void)itializationMeetKit{
+    self.localView = [[UIView alloc]init];
+    self.localView.tag = 1000;
+    [self.view insertSubview:self.localView atIndex:0];
+    [self.localView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+    
     //实例化会议对象
     self.meetKit = [[RTMeetKit alloc] initWithDelegate:self andOption:self.option];
     //白板
     self.meetKit.delegate = self;
-    
     //本地视频采集窗口
-    [self.meetKit setLocalVideoCapturer:self.showView];
+    [self.meetKit setLocalVideoCapturer:self.localView];
     
     NSDictionary *customDict = [NSDictionary dictionaryWithObjectsAndKeys:self.userName,@"nickName",nil];
     NSString *customStr = [ATCommon fromDicToJSONStr:customDict];
     
     //加入会议
     [self.meetKit joinRTC:self.anyRTCId andIsHoster:NO andUserId:[ATCommon randomString:6] andUserData:customStr];
+    
+    [self.meetKit updateLocalVideoRenderModel:AnyRTCVideoRenderScaleAspectFill];
 }
 
-#pragma mark - RTMeetKitDelegate
+//MARK: - SwitchDelegate
+- (void)switchScreen:(UIView *)video{
+    if (video.tag == 1000) {
+        video.tag = 0;
+        [self.videoArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (obj == self.localView) {
+                self.localView.tag = 1000;
+                [self.view addSubview:self.localView];
+                [self.videoArr removeObjectAtIndex:idx];
+                *stop = true;
+            }
+        }];
+        [self.videoArr addObject:video];
+    } else {
+        UIView *view = [self.view viewWithTag:1000];
+        view.tag = 0;
+        [self.videoArr addObject:view];
+        [self.videoArr removeObject:video];
+        video.tag = 1000;
+        [self.view insertSubview:video atIndex:0];
+    }
+    [self layoutVideoView];
+}
+
+//MARK: - RTMeetKitDelegate
 - (void)onRTCJoinMeetOK:(NSString*)strAnyRTCId{
     //加入会议成功的回调
     self.tipsLabel.text = @"RTC会议连接成功...";
@@ -94,80 +132,60 @@
 
 -(void)onRTCOpenVideoRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId withUserData:(NSString*)strUserData{
     //其他与会者视频接通回调(音视频)
-    if ([self.pubId isEqualToString:strRTCPubId]) {
-        return;
-    }
-    
-    NSDictionary *dict = [ATCommon fromJsonStr:strUserData];
-    @synchronized (self.videoArr){
-        UIView *videoView = [self getVideoViewWithRTCPubId:strRTCPubId andPeerId:strRTCPeerId withNickName:[dict objectForKey:@"nickName"]];
-        [self.view insertSubview:videoView atIndex:1];
+    if (![self.pubId isEqualToString:strRTCPubId]) {
+        NSDictionary *dict = [ATCommon fromJsonStr:strUserData];
+        ATVideoView *videoView = [ATVideoView loadVideoViewWithRTCPubId:strRTCPubId andPeerId:strRTCPeerId withNickName:[dict objectForKey:@"nickName"]];
+        videoView.delegate = self;
         [self.videoArr addObject:videoView];
         
         [self.meetKit setRTCVideoRender:strRTCPubId andRender:videoView];
+        [self layoutVideoView];
     }
 }
 
 -(void)onRTCCloseVideoRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId{
-    if ([self.pubId isEqualToString:strRTCPubId]) {
-        return;
-    }
-    
-    @synchronized (self.videoArr){
-        //其他会议者离开的回调（音视频）
-        for (NSInteger i = 0; i < self.videoArr.count; i++) {
-            ATVideoView *videoView = self.videoArr[i];
-            if ([videoView.pubId isEqualToString:strRTCPubId]) {
-                if (videoView.tag == 1000) {
-                    self.showView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-                    self.showView.tag = 1000;
-                    [self.view insertSubview:self.showView atIndex:0];
+    if (![self.pubId isEqualToString:strRTCPubId]) {
+        @synchronized (self.videoArr){
+            //其他会议者离开的回调（音视频）
+            UIView *largeView = [self.view viewWithTag:1000];
+            if ([largeView isKindOfClass:[ATVideoView class]]) {
+                ATVideoView *video = (ATVideoView *)largeView;
+                if ([video.pubId isEqualToString:strRTCPubId]) {
+                    [video removeFromSuperview];
+                    [self.videoArr removeObject:self.localView];
+                    self.localView.tag = 1000;
+                    [self.view insertSubview:self.localView atIndex:0];
+                    [self layoutVideoView];
+                    return;
                 }
-                [self.videoArr removeObjectAtIndex:i];
-                [videoView removeFromSuperview];
-                //刷新位置
-                [self layoutVideoView];
-                break;
             }
+            
+            [self.videoArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if ([obj isKindOfClass:[ATVideoView class]]) {
+                    ATVideoView *video = (ATVideoView *)obj;
+                    if ([video.pubId isEqualToString:strRTCPubId]) {
+                        [video removeFromSuperview];
+                        [self.videoArr removeObjectAtIndex:idx];
+                        [self layoutVideoView];
+                        *stop = YES;
+                    }
+                }
+            }];
         }
     }
 }
 
 - (void)onRTCAVStatus:(NSString*)strRTCPeerId withAudio:(BOOL)bAudio withVideo:(BOOL)bVideo{
     //其他与会者对音视频的操作的回调（比如对方关闭了音频，对方关闭了视频）
-    for (ATVideoView *videoView in self.videoArr) {
-        if ([videoView.peerId isEqualToString:strRTCPeerId]) {
-            if (!bAudio && !bVideo) {
-                [XHToast showCenterWithText:@"对方音视频关闭"];
-                return;
-            }
-            //...操作
-        }
-    }
 }
 
 -(void)onRTCAudioActive:(NSString*)strRTCPeerId withUserId:(NSString *)strUserId withShowTime:(int)nTime{
     //RTC音频检测
-
 }
 
 -(void)onRTCViewChanged:(UIView*)videoView didChangeVideoSize:(CGSize)size{
     //视频窗口大小改变
-    NSLog(@"size:%f---%f",size.width,size.height);
-    @synchronized (self.videoArr) {
-        if (videoView == self.showView){
-            self.scale = size.width/size.height;
-        }
-        
-        for (ATVideoView *atVideoView in self.videoArr) {
-            if (videoView == atVideoView) {
-                atVideoView.videoSize = size;
-                [self layoutVideoView];
-                break;
-            }
-        }
-        [self layoutVideoView];
-    }
+    NSLog(@"%f-----%f",size.width,size.height);
 }
 
 - (void)onRtcNetworkStatus:(NSString*)strRTCPeerId withUserId:(NSString *)strUserId withNetSpeed:(int)nNetSpeed withPacketLost:(int)nPacketLost{
@@ -222,119 +240,33 @@
     self.isRotation = YES;
     self.screenButton.selected = NO;
     self.isScreenIndex = 0;
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.allowRotation = YES;
 }
 
 #pragma mark - 刷新显示视图
-- (UIView *)getVideoViewWithRTCPubId:(NSString*)pubId andPeerId:(NSString *)peerId withNickName:(NSString *)nameStr{
-    ATVideoView *videoView = [ATVideoView loadVideoView];
-    videoView.frame = CGRectZero;
-    videoView.nameLabel.text = nameStr;
-    videoView.pubId = pubId;
-    videoView.peerId = peerId;
-    
-    WEAKSELF;
-    videoView.videoBlock = ^(NSString *pubId) {
-        UIView *displayView = [weakSelf.view viewWithTag:1000];
-        
-        CGFloat videoY = weakSelf.view.frame.size.height - 100;
-        
-        CGFloat videoW = CGRectGetWidth(weakSelf.view.frame)/4;
-        
-        //相同的点击事件(切换回去)
-        if ([displayView isKindOfClass:[ATVideoView class]]) {
-            ATVideoView *video = (ATVideoView *)displayView;
-            
-            CGFloat videoH = videoW  * video.videoSize.height/video.videoSize.width;
-        
-            if ([video.pubId isEqualToString:pubId]) {
-                
-                displayView.frame = CGRectMake(weakSelf.showView.frame.origin.x, videoY - videoH, videoW, videoH);
-                video.tag = 0;
-                weakSelf.showView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-                weakSelf.showView.tag = 1000;
-                [weakSelf.view insertSubview:displayView atIndex:1];
-                [weakSelf.view insertSubview:weakSelf.showView atIndex:0];
-                return ;
-            }
-        }
-        
-      //切换视图
-        for (NSInteger i = 0; i < weakSelf.videoArr.count; i++) {
-            ATVideoView *videoView = weakSelf.videoArr[i];
-            if ([videoView.pubId isEqualToString:pubId]) {
-                if (displayView == weakSelf.showView) {
-                    displayView.frame = CGRectMake(videoView.frame.origin.x, videoY - videoW/weakSelf.scale, videoW, videoW/weakSelf.scale);
-                } else {
-                    CGFloat videoH = videoW * videoView.videoSize.height/videoView.videoSize.width;
-                    displayView.frame = CGRectMake(videoView.frame.origin.x, videoY -videoH, videoW, videoH);
-                }
-                
-                if (videoView.videoSize.width > videoView.videoSize.height) {
-                    videoView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * videoView.videoSize.height/videoView.videoSize.width);
-                } else {
-                    videoView.frame = CGRectMake(0, 0, SCREEN_HEIGHT * videoView.videoSize.width/videoView.videoSize.height, SCREEN_HEIGHT);
-                }
-                videoView.center = weakSelf.view.center;
-                videoView.tag = 1000;
-                displayView.tag = 0;
-                [weakSelf.view insertSubview:displayView atIndex:1];
-                [weakSelf.view insertSubview:videoView atIndex:0];
-                break;
-            }
-        }
-    };
-    return videoView;
-}
-
 - (void)layoutVideoView{
+    
+    UIView *largeView = [self.view viewWithTag:1000];
+    [largeView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+    [self.view sendSubviewToBack:largeView];
+    [self.view insertSubview:self.containerView aboveSubview:largeView];
+    
+    //4:3
+    CGFloat itemW = self.view.frame.size.width/4;
+    CGFloat itemH = itemW * 3/4;
+    [self.containerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@(itemH));
+        make.width.equalTo(@(itemW * self.videoArr.count));
+        make.bottom.equalTo(self.videoButton.mas_top).offset(-10);
+        make.centerX.equalTo(self.view.mas_centerX);
+    }];
+
     //四人会议模式
-    CGFloat videoW = CGRectGetWidth(self.view.frame)/4;
-    
-    CGFloat videoY = self.view.frame.size.height - 100;
-    
-    CGFloat videoX = CGRectGetMidX(self.view.frame) - (videoW/2) * self.videoArr.count;
-    
-    if (SCREEN_WIDTH < SCREEN_HEIGHT) {//竖屏
-        if (self.showView.tag == 1000) {
-            self.showView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-            self.showView.center = self.view.center;
-        } else {
-            ATVideoView *videoView = [self.view viewWithTag:1000];
-            if (videoView.videoSize.width > videoView.videoSize.height) {
-                videoView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * videoView.videoSize.height / videoView.videoSize.width);
-            } else {
-                videoView.frame = CGRectMake(0, 0, SCREEN_HEIGHT * videoView.videoSize.width / videoView.videoSize.height, SCREEN_HEIGHT);
-            }
-            videoView.center = self.view.center;
-        }
-    } else {//横屏
-        if (self.showView.tag == 1000){
-            self.showView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-            //self.showView.center = self.view.center;
-        } else {
-            ATVideoView *videoView = [self.view viewWithTag:1000];
-            if (videoView.videoSize.width > videoView.videoSize.height) {
-                videoView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * videoView.videoSize.height / videoView.videoSize.width);
-            } else {
-                videoView.frame = CGRectMake(0, 0, SCREEN_HEIGHT * videoView.videoSize.width / videoView.videoSize.height, SCREEN_HEIGHT);
-            }
-            videoView.center = self.view.center;
-        }
-    }
-    
-    for (NSInteger i = 0; i < self.videoArr.count; i++) {
-        ATVideoView *videoView = [self.videoArr objectAtIndex:i];
-        
-        if (videoView.videoSize.height !=0 && videoView.videoSize.width != 0) {
-            if (videoView.tag == 1000) {
-                self.showView.frame = CGRectMake(videoX, videoY - videoW / self.scale, videoW, videoW / self.scale);
-            } else {
-                CGFloat videoH = videoW * videoView.videoSize.height/videoView.videoSize.width;
-                videoView.frame = CGRectMake(videoX, videoY - videoH, videoW, videoH);
-            }
-            videoX += videoW;
-        }
-    }
+    [self makeVideoEqualWidthViews:self.videoArr containerView:self.containerView spacing:0 padding:5];
 }
 
 #pragma mark - event
@@ -350,7 +282,6 @@
         case 100:
             //翻转摄像头
             [self.meetKit switchCamera];
-            //[self.meetKit canShareUser:1];
             break;
         case 101:
             //音频
@@ -360,7 +291,7 @@
             //挂断
             [self.meetKit leaveRTC];
         {
-            [self toOrientation:UIInterfaceOrientationPortrait];
+            [self orientationRotating:UIInterfaceOrientationPortrait];
             AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
             appDelegate.allowRotation = NO;
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -374,7 +305,10 @@
             //共享
             if (self.isScreenIndex != 0) {
                 //显示共享屏幕（横屏）
-                [self toOrientation:UIInterfaceOrientationLandscapeRight];
+                [self orientationRotating:UIInterfaceOrientationLandscapeRight];
+                AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                appDelegate.allowRotation = NO;
+                
                 if (self.screenView.hidden) {
                     self.screenView.hidden = NO;
                     return;
@@ -396,72 +330,28 @@
 }
 
 - (void)hidesKeyControl{
-    if (self.showView.tag == 1000) {
-        return;
+    //切换大屏
+    if (self.localView.tag != 1000) {
+        UIView *view = [self.view viewWithTag:1000];
+        view.tag = 0;
+        [self.videoArr addObject:view];
+        [self.videoArr removeObject:self.localView];
+        self.localView.tag = 1000;
+        [self.view insertSubview:self.localView atIndex:0];
+        [self layoutVideoView];
     }
-    ATVideoView *displayView = [self.view viewWithTag:1000];
-    CGFloat videoY = self.view.frame.size.height - 100;
-    
-    CGFloat videoW = CGRectGetWidth(self.view.frame)/4;
-    
-    CGFloat videoH = videoW  * displayView.videoSize.height/displayView.videoSize.width;
-    
-    displayView.frame = CGRectMake(self.showView.frame.origin.x, videoY - videoH, videoW, videoH);
-    
-    self.showView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    self.showView.tag = 1000;
-    displayView.tag = 0;
-    
-    [self.view insertSubview:self.showView atIndex:0];
-    [self.view insertSubview:displayView atIndex:1];
-}
-
-#pragma mark - 旋转
--(void)toOrientation:(UIInterfaceOrientation)orientation{
-
-    [UIView beginAnimations:nil context:nil];
-    
-    // 旋转屏幕
-    NSNumber *value = [NSNumber numberWithInt:orientation];
-    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
-    [UIView setAnimationDelegate:self];
-    //开始旋转
-    [UIView commitAnimations];
-    [self.view layoutIfNeeded];
-    orientation == UIInterfaceOrientationLandscapeRight ? (self.isRotation = NO):(self.isRotation = YES);
-}
-
-- (BOOL)shouldAutorotate{
-    [super shouldAutorotate];
-    if (!self.isRotation) {
-        return NO;
-    }
-    return YES;
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    
-    return UIInterfaceOrientationMaskAllButUpsideDown;
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-        
+
     } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
         [self layoutVideoView];
     }];
 }
 
 #pragma mark - other
-- (UIView *)showView{
-    if (!_showView) {
-        _showView = [[UIView alloc]init];
-        _showView.tag = 1000;
-    }
-    return _showView;
-}
-
 - (UIView *)screenView{
     if (!_screenView) {
         _screenView = [[UIView alloc]init];
@@ -469,11 +359,12 @@
     return _screenView;
 }
 
-- (NSMutableArray *)videoArr{
-    if (!_videoArr) {
-        _videoArr = [NSMutableArray array];
+- (UIView *)containerView{
+    if (!_containerView) {
+        _containerView = [[UIView alloc]init];
+        _containerView.backgroundColor = [UIColor clearColor];
     }
-    return _videoArr;
+    return _containerView;
 }
 
 - (RTMeetOption *)option{
@@ -483,6 +374,8 @@
         _option.videoLayOut = RTC_V_1X3;
         //设置视频方向
         _option.videoScreenOrientation = RTC_SCRN_Auto;
+        //美颜相机
+        _option.cameraType = RTMeetCameraTypeBeauty;
         
         //视频质量
         switch (self.typeMode) {

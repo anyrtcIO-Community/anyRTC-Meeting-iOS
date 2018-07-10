@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3tj-5X-AUN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3tj-5X-AUN">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -356,18 +356,6 @@
                                     <action selector="doSomethingEvents:" destination="i5k-kz-NaQ" eventType="touchUpInside" id="vhP-xH-Kof"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pM-Tp-ZNU">
-                                <rect key="frame" x="172" y="646" width="70" height="70"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="XOx-Ls-K2e"/>
-                                    <constraint firstAttribute="height" constant="70" id="yIw-s1-g4M"/>
-                                </constraints>
-                                <state key="normal" image="Button_Exit"/>
-                                <connections>
-                                    <action selector="doSomethingEvents:" destination="i5k-kz-NaQ" eventType="touchUpInside" id="ypT-3r-ZZd"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHB-aM-hcG">
                                 <rect key="frame" x="272" y="656" width="50" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -411,6 +399,18 @@
                                     <action selector="doSomethingEvents:" destination="i5k-kz-NaQ" eventType="touchUpInside" id="mEn-0h-FFk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pM-Tp-ZNU">
+                                <rect key="frame" x="172" y="646" width="70" height="70"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="XOx-Ls-K2e"/>
+                                    <constraint firstAttribute="height" constant="70" id="yIw-s1-g4M"/>
+                                </constraints>
+                                <state key="normal" image="Button_Exit"/>
+                                <connections>
+                                    <action selector="doSomethingEvents:" destination="i5k-kz-NaQ" eventType="touchUpInside" id="ypT-3r-ZZd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -439,6 +439,7 @@
                         <outlet property="screenButton" destination="bej-Ju-WNz" id="ekF-PI-pgN"/>
                         <outlet property="tipsLabel" destination="vLU-qS-gQ1" id="fs2-BJ-kUx"/>
                         <outlet property="topicButton" destination="L16-a1-Xbk" id="EnB-RW-sgV"/>
+                        <outlet property="videoButton" destination="7pM-Tp-ZNU" id="uXq-M7-aCu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CwC-HV-MTS" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -2,8 +2,8 @@
 //  ATVideoViewController.h
 //  RTCMeeting
 //
-//  Created by jh on 2017/10/13.
-//  Copyright © 2017年 jh. All rights reserved.
+//  Created by jh on 2018/7/6.
+//  Copyright © 2018年 jh. All rights reserved.
 //四人会议模式
 
 #import <UIKit/UIKit.h>

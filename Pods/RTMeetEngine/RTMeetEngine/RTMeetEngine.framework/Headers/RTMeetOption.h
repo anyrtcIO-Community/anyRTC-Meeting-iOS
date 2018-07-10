@@ -55,6 +55,10 @@ typedef NS_ENUM(NSInteger,AnyMeetingType) {
 @property (nonatomic, assign) RTCScreenOrientation videoScreenOrientation;
 
 /**
+ 自动旋转(这里只支持 left 变 right  portrait 变 portraitUpsideDown)
+ */
+@property (nonatomic, assign) BOOL autorotate;
+/**
  设置显示模板。人数上限默认为4个，根据个人需要联系客服开通更多人会议。
  说明：默认：RTC_V_1X3
  　　　RTC_V_1X3为小型会议模式，视频窗口比例默认为３：４，根据设置videoMode而定；
@@ -73,4 +77,9 @@ typedef NS_ENUM(NSInteger,AnyMeetingType) {
  */
 @property (nonatomic, nonatomic) RTMeetCameraType cameraType;
 
+/**
+ 视频会议最大人数(默认为4人，根据自己需求更改，建议不要超过9人)
+ 说明：该参数会在joinRTC的时候告诉服务最大支持人数：对应字段：MaxJoiner,请保持android、iOS、以及其他端保持统一。
+ */
+@property (nonatomic, assign) int maxNum;
 @end
