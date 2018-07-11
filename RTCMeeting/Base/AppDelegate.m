@@ -28,7 +28,7 @@
     [NSThread sleepForTimeInterval:1.0];
     
     //腾讯Bugly
-    [Bugly startWithAppId:@"XXX"];
+    [Bugly startWithAppId:@"f44bdde176"];
     return YES;
 }
 

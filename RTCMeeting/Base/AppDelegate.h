@@ -13,10 +13,6 @@ static NSString *token = @"XXX";
 static NSString *key = @"XXX";
 static NSString *appID = @"XXX";
 
-#define PushRtmpServer @"XXX"
-#define PullRtmpServer @"XXX"
-#define HlsServer @"XXX"
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
