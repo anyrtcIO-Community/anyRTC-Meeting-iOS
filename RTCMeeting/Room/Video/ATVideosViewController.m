@@ -27,8 +27,6 @@
 @property (nonatomic, assign)NSInteger isScreenIndex;
 //web共享view
 @property (nonatomic, strong)UIView *screenView;
-//共享PubId
-@property (nonatomic, copy)NSString *pubId;
 //容器
 @property (nonatomic, strong) UIView *containerView;
 
@@ -105,12 +103,10 @@
 -(void)onRTCOpenVideoRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId withUserData:(NSString*)strUserData{
     //其他与会者视频接通回调(音视频)
     NSDictionary *dict = [ATCommon fromJsonStr:strUserData];
-    if (![self.pubId isEqualToString:strRTCPubId]) {
-        ATVideoView *videoView = [ATVideoView loadVideoViewWithRTCPubId:strRTCPubId andPeerId:strRTCPeerId withNickName:[dict objectForKey:@"nickName"]];
-        [self.videoArr addObject:videoView];
-        [self.meetKit setRTCVideoRender:strRTCPubId andRender:videoView];
-        [self layoutVideoView];
-    }
+    ATVideoView *videoView = [ATVideoView loadVideoViewWithRTCPubId:strRTCPubId andPeerId:strRTCPeerId withNickName:[dict objectForKey:@"nickName"]];
+    [self.videoArr addObject:videoView];
+    [self.meetKit setRTCVideoRender:strRTCPubId andRender:videoView];
+    [self layoutVideoView];
 }
 
 -(void)onRTCCloseVideoRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId{
@@ -128,6 +124,24 @@
             }
         }
     }];
+}
+
+-(void)onRTCOpenScreenRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId withUserData:(NSString*)strUserData{
+    //用户开启屏幕共享
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.allowRotation = YES;
+    [self orientationRotating:UIInterfaceOrientationLandscapeRight];
+    [self.view insertSubview:self.screenView atIndex:2];
+    self.screenView.backgroundColor = [UIColor clearColor];
+    [self.screenView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+    [self.meetKit setRTCVideoRender:strRTCPubId andRender:self.screenView];
+
+}
+
+-(void)onRTCCloseScreenRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId{
+    //用户关闭屏幕共享
 }
 
 - (void)onRTCAVStatus:(NSString*)strRTCPeerId withAudio:(BOOL)bAudio withVideo:(BOOL)bVideo{
@@ -175,16 +189,24 @@
 
 - (void)onRTCUserShareOpen:(int)nType withShareInfo:(NSString*)strUserShareInfo withUserId:(NSString *)strUserId withUserData:(NSString*)strUserData{
     //共享开启
-    self.pubId = strUserShareInfo;
-    //共享开启
+    self.isScreenIndex ++;
     NSDictionary *userInfo = (NSDictionary *)[ATCommon fromJsonStr:strUserData];
-    [XHToast showCenterWithText:[NSString stringWithFormat:@"%@开启了屏幕共享",[userInfo objectForKey:@"nickName"]]];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [XHToast showCenterWithText:[NSString stringWithFormat:@"%@开启了屏幕共享",[userInfo objectForKey:@"nickName"]]];
+    });
 }
 
 - (void)OnRTCUserShareClose{
     //共享关闭
-    self.pubId = @"";
-    [XHToast showCenterWithText:@"屏幕共享已关闭"];
+    [self.screenView removeFromSuperview];
+    self.screenView = nil;
+    self.isScreenIndex = 0;
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [self orientationRotating:UIInterfaceOrientationPortrait];
+    appDelegate.allowRotation = NO;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [XHToast showCenterWithText:@"屏幕共享已关闭"];
+    });
 }
 
 #pragma mark - 刷新显示视图
@@ -248,15 +270,6 @@
 
 #pragma mark - event
 - (IBAction)doSomethingEvents:(UIButton *)sender {
-    if (sender.selected && (sender.tag == 104)) {
-        self.screenView.hidden = YES;
-        sender.selected = NO;
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        appDelegate.allowRotation = YES;
-        [self orientationRotating:UIInterfaceOrientationPortrait];
-        return;
-    }
-    
     sender.selected = !sender.selected;
     switch (sender.tag) {
         case 100:
@@ -272,8 +285,7 @@
         {
             [self.meetKit leaveRTC];
             AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-            appDelegate.allowRotation = YES;
-            [self orientationRotating:UIInterfaceOrientationPortrait];
+            appDelegate.allowRotation = NO;
             [self dismissViewControllerAnimated:YES completion:nil];
         }
             break;
@@ -285,20 +297,18 @@
             //共享
             if (self.isScreenIndex != 0) {
                 //显示共享屏幕（横屏）
-                AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-                appDelegate.allowRotation = YES;
-                [self orientationRotating:UIInterfaceOrientationLandscapeRight];
                 if (self.screenView.hidden) {
                     self.screenView.hidden = NO;
-                    return;
+                    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                    appDelegate.allowRotation = YES;
+                    [self orientationRotating:UIInterfaceOrientationLandscapeRight];
+                } else {
+                    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                    [self orientationRotating:UIInterfaceOrientationPortrait];
+                    
+                    appDelegate.allowRotation = NO;
+                    self.screenView.hidden = YES;
                 }
-                
-                [self.view insertSubview:self.screenView atIndex:2];
-                self.screenView.backgroundColor = [UIColor clearColor];
-                [self.screenView mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
-                }];
-                [self.meetKit setRTCVideoRender:self.pubId andRender:self.screenView];
             } else {
                 [XHToast showCenterWithText:@"当前无人发起屏幕共享"];
                 sender.selected = NO;

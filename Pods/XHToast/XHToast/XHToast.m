@@ -128,7 +128,6 @@
 }
 
 + (void)showCenterWithText:(NSString *)text duration:(CGFloat)duration{
-    
     XHToast *toast = [[XHToast alloc] initWithText:text];
     toast.duration = duration;
     [toast showIn:[self window]];

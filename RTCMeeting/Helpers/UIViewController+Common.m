@@ -147,7 +147,7 @@
 - (void)orientationRotating:(UIInterfaceOrientation)direction{
     [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationUnknown] forKey:@"orientation"];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    (direction == UIInterfaceOrientationLandscapeLeft) ? (appDelegate.allowRotation = YES) : (appDelegate.allowRotation = NO);
+    (direction == UIInterfaceOrientationLandscapeRight) ? (appDelegate.allowRotation = YES) : (appDelegate.allowRotation = NO);
     
     NSNumber *value = [NSNumber numberWithInt:direction];
     [[UIDevice currentDevice] setValue:value forKey:@"orientation"];

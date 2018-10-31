@@ -65,6 +65,27 @@
 -(void)onRTCCloseVideoRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId;
 
 /**
+ 用户开启桌面共享
+
+ @param strRTCPeerId RTC服务生成的标识Id (用于标识与会者，每次加入会议随机生成)；
+ @param strRTCPubId RTC服务生成流的ID (用于标识与会者发布的流)；
+ @param strUserId 开发者自己平台的Id；
+ @param strUserData 开发者自己平台的相关信息（昵称，头像等)；
+ 说明：开发者需调用设置其他与会者视频窗口（setRTCVideoRender）方法
+ */
+-(void)onRTCOpenScreenRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId withUserData:(NSString*)strUserData;
+
+/**
+ 用户退出桌面共享
+
+ @param strRTCPeerId RTC服务生成的标识Id (用于标识与会者，每次加入会议随机生成)；
+ @param strRTCPubId RTC服务生成流的ID (用于标识与会者发布的流)；
+ @param strUserId 开发者自己平台的Id；
+ 说明：其他与会者离开将会回调此方法；需本地移除屏幕共享窗口。
+ */
+-(void)onRTCCloseScreenRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId;
+
+/**
  其他与会者视频窗口的对音视频的操作
 
  @param strRTCPeerId  RTC服务生成的标识Id (用于标识与会者，每次加入会议随机生成)；

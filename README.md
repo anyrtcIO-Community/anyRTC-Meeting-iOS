@@ -1,5 +1,23 @@
 # anyRTC-Meeting-iOS
 
+## 更新日志
+
+2018年10月31日：</br>
+
+（1）修复美颜相机情况下，本地视频添加子视图镜像的问题。</br>
+
+（2）RTMeetKitDelegate添加开启屏幕共享、关闭屏幕共享的回调；</br>
+
+```
+//用户开启桌面共享
+-(void)onRTCOpenScreenRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId withUserData:(NSString*)strUserData;
+
+//用户退出桌面共享
+-(void)onRTCCloseScreenRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId;
+```
+（3）修复Demo中的已知问题。
+
+
 ## 简介
 anyRTC-Meeting-iOS视频会议，基于RTMeetEngine SDK，支持视频、语音多人会议，适用于会议、培训、互动等多人移动会议。</br>
 
