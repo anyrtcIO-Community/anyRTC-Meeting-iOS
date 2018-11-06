@@ -4,7 +4,7 @@ target ‘RTCMeeting’ do
 pod 'Masonry'
 pod 'XHToast', '~> 1.4.0'
 pod 'Bugly'
-pod 'RTMeetEngine', '~> 1.1.3'
+pod 'RTMeetEngine', '~> 1.1.4'
 
 end
 
