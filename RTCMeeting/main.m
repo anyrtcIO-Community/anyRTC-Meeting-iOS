@@ -2,8 +2,8 @@
 //  main.m
 //  RTCMeeting
 //
-//  Created by jh on 2017/10/12.
-//  Copyright © 2017年 jh. All rights reserved.
+//  Created by 余生丶 on 2019/3/12.
+//  Copyright © 2019 Ar. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

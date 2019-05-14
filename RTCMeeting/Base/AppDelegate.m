@@ -2,12 +2,11 @@
 //  AppDelegate.m
 //  RTCMeeting
 //
-//  Created by jh on 2017/10/12.
-//  Copyright © 2017年 jh. All rights reserved.
+//  Created by 余生丶 on 2019/3/12.
+//  Copyright © 2019 Ar. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import <Bugly/Bugly.h>
 
 @interface AppDelegate ()
 
@@ -18,20 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-#warning - 前往https://www.anyrtc.io/获取相关配置信息
-    // 配置开发者信息
-    [AnyRTCMeetEngine initEngineWithAnyRTCInfo:developerID andAppId:appID andKey:key andToke:token];
-    
-    //配置私有云，默认无需配置
-    //[AnyRTCMeetEngine configServerForPriCloud:@"XXX" andPort:nil];
-    
-    [NSThread sleepForTimeInterval:1.0];
-    
-    //腾讯Bugly
-    [Bugly startWithAppId:@"f44bdde176"];
+    //配置开发者信息
+    [ARMeetEngine initEngine:appID token:token key:key developerId:developerID];
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -59,11 +48,12 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(nullable UIWindow *)window  NS_AVAILABLE_IOS(6_0) __TVOS_PROHIBITED {
-    if (self.allowRotation) {
-        return UIInterfaceOrientationMaskAllButUpsideDown;
+- (BOOL) application:(UIApplication *)application shouldAllowExtensionPointIdentifier:(UIApplicationExtensionPointIdentifier)extensionPointIdentifier{
+    if ([extensionPointIdentifier isEqualToString:@"com.apple.keyboard-service"]) {
+        return NO;
     }
-    return UIInterfaceOrientationMaskPortrait;
+    return YES;
 }
+
 
 @end

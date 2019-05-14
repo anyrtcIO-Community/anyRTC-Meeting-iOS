@@ -1,28 +1,28 @@
 PODS:
   - Bugly (2.5.0)
   - Masonry (1.1.0)
-  - RTMeetEngine (1.1.4)
-  - XHToast (1.4.0)
+  - RTMeetEngine (3.0.0)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Bugly
   - Masonry
-  - RTMeetEngine (~> 1.1.4)
-  - XHToast (~> 1.4.0)
+  - RTMeetEngine (~> 3.0.0)
+  - SVProgressHUD (~> 2.2.5)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Bugly
     - Masonry
     - RTMeetEngine
-    - XHToast
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  RTMeetEngine: 2aed8db464e97a076a20022d034bce5d79a846f7
-  XHToast: 3b354766d56d9df8fef8e64387bbd25c90d71a86
+  RTMeetEngine: 652ae9b10621b5429e4230c45205cd554e93cc54
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 6399a7e85b6559f968b92faf77fcd947d8a4ec78
+PODFILE CHECKSUM: 4980c5bd40b5873594a823118da0f0bee1ea29a8
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.6.1

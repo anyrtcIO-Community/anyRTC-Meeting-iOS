@@ -2,23 +2,16 @@
 //  AppDelegate.h
 //  RTCMeeting
 //
-//  Created by jh on 2017/10/12.
-//  Copyright © 2017年 jh. All rights reserved.
+//  Created by 余生丶 on 2019/3/12.
+//  Copyright © 2019 Ar. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-
-static NSString *developerID = @"XXX";
-static NSString *token = @"XXX";
-static NSString *key = @"XXX";
-static NSString *appID = @"XXX";
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-//是都允许横屏
-@property (nonatomic,assign)BOOL allowRotation;
 
 @end
 

@@ -1,10 +1,9 @@
-platform :ios,'8.0'
+platform :ios,'9.0'
 target ‘RTCMeeting’ do
-    
+
+pod 'RTMeetEngine', '~> 3.0.0'
 pod 'Masonry'
-pod 'XHToast', '~> 1.4.0'
+pod 'SVProgressHUD', '~> 2.2.5'
 pod 'Bugly'
-pod 'RTMeetEngine', '~> 1.1.4'
 
 end
-

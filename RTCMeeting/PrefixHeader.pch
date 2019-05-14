@@ -1,0 +1,40 @@
+//
+//  PrefixHeader.pch
+//  RTCMeeting
+//
+//  Created by 余生丶 on 2019/3/20.
+//  Copyright © 2019 Ar. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <UIKit/UIKit.h>
+
+#error - 请前往www.anyrtc.io申请开发者信息
+//MARK: - 配置开发者信息
+static NSString *developerID = @"XXXXXX";
+static NSString *token = @"XXXXXX";
+static NSString *key = @"XXXXXX";
+static NSString *appID = @"XXXXXX";
+
+//MARK: - ARMeetSDK
+#import <RTMeetEngine/ARMeetSDK.h>
+
+#import <SVProgressHUD.h>
+#import <Masonry.h>
+#import "ArLogView.h"
+#import "ArVideoView.h"
+
+//MARK: - 宏
+
+#define random(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)/255.0]
+#define randomColor random(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+//日志
+#define ArMethodText(name) [[self mutableArrayValueForKey:@"logArr"] addObject:[NSString stringWithFormat:@"方法：%@",name]]
+#define ArCallbackLog [[self mutableArrayValueForKey:@"logArr"] addObject:[NSString stringWithFormat:@"回调：%s",__func__]]
+
+#endif /* PrefixHeader_pch */

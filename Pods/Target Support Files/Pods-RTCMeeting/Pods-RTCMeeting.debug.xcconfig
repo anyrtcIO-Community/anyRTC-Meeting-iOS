@@ -1,10 +1,9 @@
 FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Bugly" "${PODS_ROOT}/RTMeetEngine/RTMeetEngine"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Bugly" "${PODS_ROOT}/Headers/Public/Masonry" "${PODS_ROOT}/Headers/Public/RTMeetEngine" "${PODS_ROOT}/Headers/Public/XHToast"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Masonry" "${PODS_ROOT}/Headers/Public/SVProgressHUD"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Masonry" "${PODS_CONFIGURATION_BUILD_DIR}/XHToast"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Bugly" -isystem "${PODS_ROOT}/Headers/Public/Masonry" -isystem "${PODS_ROOT}/Headers/Public/RTMeetEngine" -isystem "${PODS_ROOT}/Headers/Public/XHToast"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"Masonry" -l"XHToast" -l"c++" -l"z" -framework "Bugly" -framework "Foundation" -framework "RTMeetEngine" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Masonry" "${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Masonry" -l"SVProgressHUD" -l"c++" -l"z" -framework "Bugly" -framework "Foundation" -framework "QuartzCore" -framework "RTMeetEngine" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
