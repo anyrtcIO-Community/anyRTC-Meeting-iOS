@@ -18,7 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     //配置开发者信息
-    [ARMeetEngine initEngine:appID token:token key:key developerId:developerID];
+    [ARMeetEngine initEngine:appID token:token];
+    [Bugly startWithAppId:@"f44bdde176"];
     return YES;
 }
 
