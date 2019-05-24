@@ -8,7 +8,7 @@
 
 #import "ArVideoViewController.h"
 
-static const CGFloat scrollHeight = 100;
+static const CGFloat scrollHeight = 130;
 
 @interface ArVideoViewController ()<ARMeetKitDelegate,ArVideoDelegate,ARShareDelegate>
 
@@ -243,7 +243,7 @@ static const CGFloat scrollHeight = 100;
     largeView.tag = 0;
     [self.stackView addArrangedSubview:largeView];
     [largeView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(scrollHeight * 4/3));
+        make.width.equalTo(@(scrollHeight * 3/4));
         make.height.equalTo(@(scrollHeight));
     }];
     
@@ -282,12 +282,14 @@ static const CGFloat scrollHeight = 100;
     [super viewDidLayoutSubviews];
     self.scrollView.contentSize = CGSizeMake(self.stackView.frame.size.width, self.stackView.frame.size.height);
     [self.stackView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        if (scrollHeight * 4/3 * self.videoArr.count > self.scrollView.frame.size.width) {
+        if (scrollHeight * 3/4 * self.videoArr.count > self.scrollView.frame.size.width) {
             make.edges.equalTo(self.scrollView);
         } else {
             make.centerX.equalTo(self.scrollView.mas_centerX);
+            make.top.bottom.equalTo(self.scrollView);
         }
     }];
+    [self.scrollView layoutIfNeeded];
 }
 
 - (void)leaveRoom {
@@ -303,7 +305,7 @@ static const CGFloat scrollHeight = 100;
     ArVideoView *videoView = [[ArVideoView alloc] initWithPubId:pubId peerId:peerId];
     [self.stackView addArrangedSubview:videoView];
     [videoView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(scrollHeight * 4/3));
+        make.width.equalTo(@(scrollHeight * 3/4));
         make.height.equalTo(@(scrollHeight));
     }];
     videoView.delegate = self;
