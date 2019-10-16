@@ -3,11 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		A14AECE0D6E5F04D08EDDB51F60B69E4 /* Bugly */ = {
+		2791A72446969A0655E24D3977704A7F /* RTMeetEngine */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 73FF15EAF0C68981E1442292D0EE0DB7 /* Build configuration list for PBXAggregateTarget "RTMeetEngine" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = RTMeetEngine;
+			productName = RTMeetEngine;
+		};
+		4A68CFD979D413A619DF631BB121D98F /* Bugly */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 9CC7AA793D9397C15E010F8242EE1046 /* Build configuration list for PBXAggregateTarget "Bugly" */;
 			buildPhases = (
@@ -17,171 +27,161 @@
 			name = Bugly;
 			productName = Bugly;
 		};
-		A6ABC7991CF3462F64EF140DAAE502DE /* RTMeetEngine */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 202492C5C4B9A4FDB60EEB51EBD211A6 /* Build configuration list for PBXAggregateTarget "RTMeetEngine" */;
-			buildPhases = (
-			);
-			dependencies = (
-			);
-			name = RTMeetEngine;
-			productName = RTMeetEngine;
-		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		06A4624C0490881FD7962E6F2768469F /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 47C17F2260714FDA1CB1A5B0E3F6E0D3 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		0E240C43FBA5F9757ECCFA06674486D6 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AEF432436F2D7CC314F7E9B7C9D81A /* SVProgressAnimatedView.m */; };
-		0F1CEF2B08D18B900A16F3249C96DBEF /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 518819988EB59FE514D68031A5BA3F2C /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		147370B40CE853ADCC91F9C81FF5E5FA /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E5FE5EEADD3A8F5ADE8D5578CDA79C6F /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1D12FE6ABBFFDECF65CA15759AD0E411 /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E54AC18FE34D5CD78E7F3012405C156 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1E3B9E29E64A41419BADE54AEFDAF08E /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA59BFCB3E27874D9A8334FFA794169 /* MASCompositeConstraint.m */; };
-		24F67F67B66D71384E9B66CF81AF84B3 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD91EA691524A8D2B9038C3A50AB999 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		283A564C853040B1BD6CEB76789E6D76 /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 83650AB385F5982379E7EBA23A859F21 /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		29214D8D2E69809E66F0C8A98A36BCCE /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D187AF0910D07A52BC3341C4CD805B98 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		34D6D9E7FEAF947841106F0662A2E52D /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D6844F3F2E91B8381CB5896FE6F7B2 /* Masonry-dummy.m */; };
-		4C4A7F0FC890313F31ECD636082CB1CB /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 710D4183CB92D3CFDEBC39F06D1606D4 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		591F1FA04AB069DD22008A8BABAAB829 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D4F7274BC7052DF4AA457375D3AAB5 /* MASViewConstraint.m */; };
-		5E44F7CFDA34CB0B1F1A65A19641AC7D /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 207B61D748F19CAA4759DB2E2CBA94AD /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		60DC27F14226DDD592FA1464C2DA0C2E /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DBA5B0B6BAFEB1E81E013DE6D6469E /* MASConstraintMaker.m */; };
-		62ED0D1B1D2D5EF2225776A9C2BAF4DA /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = F779E383F47F9A193E2142DC3963BF11 /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7C31AFA9C95568E16B6911B670754372 /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 23C2A22FF5F2FF3F109476561DDF7C33 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		834D1BB9656D3E64B2AF8C0E0119A37F /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 3896A72F8D6439605D80469C627F46B0 /* MASConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		835B54CF781E599F46235AE3F48BA40A /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E4ECF7AE11041AABF2CD121F07D5D67 /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		8FC078B82C837D5F1A05757DB28DB632 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5687873F116D5A3D1135FD688AC467AF /* SVRadialGradientLayer.m */; };
-		96DB2AB39DFEB82319EF630730FDE4FD /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FEC1283EE6CB28EED4F3187102072B3 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9A211D21F704F250BF1AAA53A7B94878 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8FDB74E9D82C71F0B9D4EB839FC02C /* SVProgressHUD.m */; };
-		9F7245F368B8CD09FE3F2C36BAA2842D /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E16628EA1063994ED22BCA3257239E7 /* MASViewAttribute.m */; };
-		A090D8155E605A0B026212726EC71CAF /* Pods-RTCMeeting-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC41827B067D3BD5FD458BE1BC568605 /* Pods-RTCMeeting-dummy.m */; };
-		AB74AF1EEF7E9D9855E150F344F8CBD5 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FA1464686EF20CF6FBA1E8FD914784 /* MASLayoutConstraint.m */; };
-		B5F8B45888F4DFECC89DBA2B0307C178 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A58733FEAE219F726BBCB6639AE0C7 /* MASConstraint.m */; };
-		C1C295BCD795C2B6044DB474583804B1 /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 358EB7A2E32BEAE7B5B7CF5946824453 /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C48DF5D21345BD3D127256C6AD3AEFD4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D625F952DA778603C73BAC702844044 /* NSLayoutConstraint+MASDebugAdditions.m */; };
-		C7AC29F56D5F471248BBA0A724CDF3C7 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 35A3C7C669673845E83E6554D55AB90B /* Masonry.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D1D4442E6949DAF0EB2688A85F889E8D /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE04B004384A97064074205E5ABFAB19 /* ViewController+MASAdditions.m */; };
-		D2DA0FA3532C790CBFB21F5B64CBF944 /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 339748B0AFC2977829E91FADA9A1A9D3 /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D59F2BB9843C83057A2BAAD5054B68AE /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F9569B0697F574753DAC5FD4C5A9C2DC /* NSArray+MASAdditions.m */; };
-		E94F68ABEAC53DD4556594E0EE4EAD57 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 541E2EB17D2CE8FCD9A70F8CF73BB29D /* MASUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		EAED263ADDF8EBE21F1EE02F9FB8FD7E /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2B478801BDC3654E78FACA58287F70 /* View+MASAdditions.m */; };
-		EE92FCF6C8AAB755954BD1A35F99A713 /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B8B2B2378383D564EAEAFF2B1F514B /* SVProgressHUD-dummy.m */; };
-		F0223A4EEF0A05E2DBC75767471884A2 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9319293837811FE0B9136C3AB97619 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F55CC1609001A978F28D174CBB730953 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2288199BE9E4C7682841DEBFD882CAD /* SVIndefiniteAnimatedView.m */; };
+		0096B5A8BA8E4F2BFD8839D0FE7CD696 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F87F0E4D4A239CF078BE602039264CE /* MASLayoutConstraint.m */; };
+		115ACCE253A886181B55773DDC70D6ED /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = ABFE02A10CCA6C7D99C63E7823534FA9 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1E5D56FF58658F9F45723CA2940489EE /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6656BAE7017905E51AF67B76216539F7 /* MASConstraintMaker.m */; };
+		28EE1597D49EEC635522C951B57940C5 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AEF432436F2D7CC314F7E9B7C9D81A /* SVProgressAnimatedView.m */; };
+		42947699890A199B08A896144A878D80 /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 671EF307ED7A02CF9F2CBD407571FBDC /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		46692A2E77157B00827182C8DC686F72 /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EC9400085E7FD4C39FE15EED100D29A /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4971C5D36C8DB492740A46B331AB537D /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8FDB74E9D82C71F0B9D4EB839FC02C /* SVProgressHUD.m */; };
+		4CE091F886EC6324673EFE0AEBBEA0FE /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E0291ED7B794F6F637FCE6259AD096C /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		545325DBA1132F1E2DA1C20B95108395 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2288199BE9E4C7682841DEBFD882CAD /* SVIndefiniteAnimatedView.m */; };
+		572D05B146EAA3EF5530A0D0E34904A0 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 879459E74CEF82B2EF74E144A6EDA10C /* MASViewConstraint.m */; };
+		59EA578EED8BAC126FDC60C32AE11521 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA234070542F38068AFFA31FC88E6CB /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		63F87C318437740E8202E4D3DD0826FA /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = E663D578DA68E99055631CEBECD05909 /* MASCompositeConstraint.m */; };
+		65E88072A2BDC576BFC85E67EF9FBBC6 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 7862421FA71E573677EE877140EA4E70 /* MASUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7CF2AC7A3B3ED03B30C1E4ED662B0551 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 95A3F7CCDE1C20F92BA7BAFB8F2BC88F /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		81F811A56B6724F7E8E2D25364E595E3 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B14A4406829705D995C5D0C32D8C23F /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8649FA19DB7585214273380164946561 /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 83650AB385F5982379E7EBA23A859F21 /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9194B58ACE900ED6BAE6AD92E24A2CFF /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F84D21824192E70B1F7A5AD1487D540 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		92BF70E9D3285561EB404A7C4A4A6DEE /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 1998A0D9135FF19C2787697480AC80B0 /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9E6A86D1D3983E3AD2802CA2B480D515 /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1CC5CF898A980D2837BCB384E28746 /* SVProgressHUD-dummy.m */; };
+		A3307B8FB6EE0A049DBAE3AA4D2C6DA0 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F0611C9E291D0BA084DE2BB1DDC53068 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A893FFB0F9137E298D6752729850D1D6 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 266B59DF65724F3F3A001C3F355C5FDF /* MASViewAttribute.m */; };
+		AF559EEBDEEDF421756966862ED3E746 /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 710D4183CB92D3CFDEBC39F06D1606D4 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B20A0E5D8F9BCED1A82793C4BE9E7258 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B691D5A796FB4C0641477652FEC3C9A /* Masonry.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B946AFB1A725D85E07F645A7EF086383 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D450F2F1EDD9BF410BA4FAAAD2F1B09 /* NSArray+MASAdditions.m */; };
+		C05FC6699632FE712174ED875A605410 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 15091F97703FE18F506131D80D6F5B21 /* ViewController+MASAdditions.m */; };
+		C74D2E856ADC8139CD00DBD184061B23 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 256257CD8CF4DE610731158313D6B319 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C7920681F0164686C56327ED3C6AAC58 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8528DAA74B9E54F58E006A4D46CA9A21 /* View+MASAdditions.m */; };
+		D72EE0E749232B2C899702FC1C9402BB /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 312DA7A0567B6984A43F0FAD85A74312 /* Masonry-dummy.m */; };
+		DC85A1CC87F3496C48D0CC2B09E5322F /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 339748B0AFC2977829E91FADA9A1A9D3 /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E56ED51862897266BF586BA26965E137 /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E4ECF7AE11041AABF2CD121F07D5D67 /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E76935CFF4AF327F8D9A7C1935F7D900 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 299D46E28F1AA43C85F3E9C4EB1000C8 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EB663E3E1EB4BB670DC29B77DB330135 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 35BE6D992FBF61038C861D697D46FFAD /* MASConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EE936A6838005A5ED1BC5F74BE37B7BD /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AECB9AE4F05CB9ECE0E990530EAF556 /* MASConstraint.m */; };
+		F1B75048874B8773E5568E6D3ACA12E4 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EC4A4C27F842BA3151AB832DB4C805F8 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F469136DE2F0C917744B2169A95A73E5 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5687873F116D5A3D1135FD688AC467AF /* SVRadialGradientLayer.m */; };
+		F8D781F8EE51680CF7160A87F98F6AF8 /* Pods-RTCMeeting-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3650701DE3360BE29F89662B61E20B2 /* Pods-RTCMeeting-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		295207A18EDBECC90F2EF13FA3F06256 /* PBXContainerItemProxy */ = {
+		52831F6E684237F466F6D73DC3449FD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A6ABC7991CF3462F64EF140DAAE502DE;
-			remoteInfo = RTMeetEngine;
-		};
-		787F880C4E5D7FC5BB841A5E3ECEDF01 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B854683690DC218F2B6E2FFDB0D27CDC;
-			remoteInfo = Masonry;
-		};
-		B26A7E3E36D6D0236F388DF6B639D282 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A14AECE0D6E5F04D08EDDB51F60B69E4;
+			remoteGlobalIDString = 4A68CFD979D413A619DF631BB121D98F;
 			remoteInfo = Bugly;
 		};
-		F74AC862BB51ADFF073B3D10ADA1FC90 /* PBXContainerItemProxy */ = {
+		6D5751871167096FDA4E6BEED88208CF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3D91917AFCA06AC4E824874A8404D5A2;
+			remoteGlobalIDString = 2791A72446969A0655E24D3977704A7F;
+			remoteInfo = RTMeetEngine;
+		};
+		7DAD5E3FD9F8C1BF380FA824A39CDA22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55AF53E6C77A10ED4985E04D74A8878E;
+			remoteInfo = Masonry;
+		};
+		F665534EB622DA53B0D54F76B72F435B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C8D67D8B72D6BA42CCEDB648537A340;
 			remoteInfo = SVProgressHUD;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02681DD289E27E25EED346AEED609D0F /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
 		033235D5D9127F7AF0FECECAB39F419E /* ARMeetEngine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ARMeetEngine.h; path = RTMeetEngine/RTMeetEngine.framework/Headers/ARMeetEngine.h; sourceTree = "<group>"; };
-		03343BD2B8118E0CB8C420C44086E865 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
-		06D6844F3F2E91B8381CB5896FE6F7B2 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
-		074EC36486DE6D58EFF8C3FA7291DA66 /* libSVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSVProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		069EF3EB5FA6F28A7918E0537B5EAEA0 /* libPods-RTCMeeting.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RTCMeeting.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		097581CCC33D71CA26DB1E99512B7BA9 /* ARMeetOption.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ARMeetOption.h; path = RTMeetEngine/RTMeetEngine.framework/Headers/ARMeetOption.h; sourceTree = "<group>"; };
-		0D9C2ED5B291C287B630F3B15E5F936E /* Pods-RTCMeeting-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RTCMeeting-acknowledgements.plist"; sourceTree = "<group>"; };
+		15091F97703FE18F506131D80D6F5B21 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		1998A0D9135FF19C2787697480AC80B0 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
 		1A8FDB74E9D82C71F0B9D4EB839FC02C /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
-		1D66257D62B3768781FD4D290C29D417 /* libMasonry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMasonry.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		207B61D748F19CAA4759DB2E2CBA94AD /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		23C2A22FF5F2FF3F109476561DDF7C33 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
+		1BA234070542F38068AFFA31FC88E6CB /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		1EC9400085E7FD4C39FE15EED100D29A /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
+		1F84D21824192E70B1F7A5AD1487D540 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
+		1FFED36A657123030ABB700256D73F15 /* libMasonry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMasonry.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		256257CD8CF4DE610731158313D6B319 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
 		26029958E5A74E9C5898C1B6248302E9 /* ARObjects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ARObjects.h; path = RTMeetEngine/RTMeetEngine.framework/Headers/ARObjects.h; sourceTree = "<group>"; };
-		2975DCC9A3D24F9E9795BDF1C3A70B70 /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
-		2E54AC18FE34D5CD78E7F3012405C156 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
+		266B59DF65724F3F3A001C3F355C5FDF /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
+		299D46E28F1AA43C85F3E9C4EB1000C8 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		312DA7A0567B6984A43F0FAD85A74312 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
 		339748B0AFC2977829E91FADA9A1A9D3 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
-		358EB7A2E32BEAE7B5B7CF5946824453 /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
-		35A3C7C669673845E83E6554D55AB90B /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
-		3896A72F8D6439605D80469C627F46B0 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
-		3E2B478801BDC3654E78FACA58287F70 /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
-		3FEC1283EE6CB28EED4F3187102072B3 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		35BE6D992FBF61038C861D697D46FFAD /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
 		41DAE3BAE4A6F9BDF7B7641D22C128EE /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
-		467505272D967D691F8C3AE6A3573B83 /* libPods-RTCMeeting.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RTCMeeting.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		47C17F2260714FDA1CB1A5B0E3F6E0D3 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
-		48EE3DF7A27D72B975C5EEA320FD9570 /* Pods-RTCMeeting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RTCMeeting.release.xcconfig"; sourceTree = "<group>"; };
-		518819988EB59FE514D68031A5BA3F2C /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
-		541E2EB17D2CE8FCD9A70F8CF73BB29D /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
 		5687873F116D5A3D1135FD688AC467AF /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		5945469436A6BE13517F20586EDAB313 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		5E0291ED7B794F6F637FCE6259AD096C /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
+		5F883C1C77B9209F6D658118A18F67D3 /* Pods-RTCMeeting-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RTCMeeting-acknowledgements.plist"; sourceTree = "<group>"; };
+		6656BAE7017905E51AF67B76216539F7 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
+		671EF307ED7A02CF9F2CBD407571FBDC /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
+		6B691D5A796FB4C0641477652FEC3C9A /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
 		6C7FD6C5DF76152C9B4827AE03B9BD48 /* ARMeetKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ARMeetKit.h; path = RTMeetEngine/RTMeetEngine.framework/Headers/ARMeetKit.h; sourceTree = "<group>"; };
 		710D4183CB92D3CFDEBC39F06D1606D4 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
-		74A67D0258DE102399A1949FA0D496DB /* Pods-RTCMeeting-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RTCMeeting-resources.sh"; sourceTree = "<group>"; };
+		75A3C4505C8D3321FB0F44C11B31CDCD /* Pods-RTCMeeting-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RTCMeeting-resources.sh"; sourceTree = "<group>"; };
+		7862421FA71E573677EE877140EA4E70 /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
+		7AECB9AE4F05CB9ECE0E990530EAF556 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
+		7F87F0E4D4A239CF078BE602039264CE /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
 		826B713B84CCFA65743007C3AB09193E /* ARCommonEnum.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ARCommonEnum.h; path = RTMeetEngine/RTMeetEngine.framework/Headers/ARCommonEnum.h; sourceTree = "<group>"; };
 		83650AB385F5982379E7EBA23A859F21 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
-		89DBA5B0B6BAFEB1E81E013DE6D6469E /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
+		8528DAA74B9E54F58E006A4D46CA9A21 /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
+		879459E74CEF82B2EF74E144A6EDA10C /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
+		8B14A4406829705D995C5D0C32D8C23F /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		8B1CC5CF898A980D2837BCB384E28746 /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
 		8C5FF155F03BDABA16E91FE9F31F884C /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
-		8D625F952DA778603C73BAC702844044 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		8E4ECF7AE11041AABF2CD121F07D5D67 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		92FDCD4785E005A7326BCE2BDC8BBDBC /* Pods-RTCMeeting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RTCMeeting.release.xcconfig"; sourceTree = "<group>"; };
+		95A3F7CCDE1C20F92BA7BAFB8F2BC88F /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
 		99AEF432436F2D7CC314F7E9B7C9D81A /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
-		9BA59BFCB3E27874D9A8334FFA794169 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
+		9D450F2F1EDD9BF410BA4FAAAD2F1B09 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9E16628EA1063994ED22BCA3257239E7 /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
-		AA16DCAE23D67256950DF78FF6897B90 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
-		AE9319293837811FE0B9136C3AB97619 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
-		AF011E9EE2FDFCD3F709C0A84199E9AF /* Pods-RTCMeeting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RTCMeeting.debug.xcconfig"; sourceTree = "<group>"; };
+		A3650701DE3360BE29F89662B61E20B2 /* Pods-RTCMeeting-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RTCMeeting-dummy.m"; sourceTree = "<group>"; };
+		ABFE02A10CCA6C7D99C63E7823534FA9 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
 		B4272F4EB89737F509A4964396AF2915 /* ARMeetSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ARMeetSDK.h; path = RTMeetEngine/RTMeetEngine.framework/Headers/ARMeetSDK.h; sourceTree = "<group>"; };
-		B9A58733FEAE219F726BBCB6639AE0C7 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
 		BBAAA687FD1DA18E51E5908C8AD001FE /* Bugly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Bugly.xcconfig; sourceTree = "<group>"; };
-		BC51AEF07E2ACCCF90BAF13C50717D02 /* Pods-RTCMeeting-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RTCMeeting-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BCD91EA691524A8D2B9038C3A50AB999 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		BE35E4DF4315E731ECD29A665AE7AA94 /* Pods-RTCMeeting-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RTCMeeting-frameworks.sh"; sourceTree = "<group>"; };
+		C28B0E887384F6BED37772D2C0B14289 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
 		C36790462E27070CB3E514ED3FE8B5BC /* RTMeetEngine.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RTMeetEngine.xcconfig; sourceTree = "<group>"; };
-		CC41827B067D3BD5FD458BE1BC568605 /* Pods-RTCMeeting-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RTCMeeting-dummy.m"; sourceTree = "<group>"; };
+		C546EB4BA236164343445047C5F2A01F /* Pods-RTCMeeting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RTCMeeting.debug.xcconfig"; sourceTree = "<group>"; };
+		C65A1A105E06AD0951C47C49B99B5574 /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
 		D0C9734D763ABB1573776855AE4E67E9 /* ARMeetKitDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ARMeetKitDelegate.h; path = RTMeetEngine/RTMeetEngine.framework/Headers/ARMeetKitDelegate.h; sourceTree = "<group>"; };
-		D187AF0910D07A52BC3341C4CD805B98 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
-		D5D4F7274BC7052DF4AA457375D3AAB5 /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
 		D91F76BBF1664CFFF6905E1A8E5B5E5E /* RTMeetEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RTMeetEngine.framework; path = RTMeetEngine/RTMeetEngine.framework; sourceTree = "<group>"; };
-		DE04B004384A97064074205E5ABFAB19 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
-		E047D12A27B7E2B6212F615AF4D4443E /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
-		E2B8B2B2378383D564EAEAFF2B1F514B /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
-		E5FE5EEADD3A8F5ADE8D5578CDA79C6F /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		DA76FCF4D0B9886020FC8B7EC3424E58 /* Pods-RTCMeeting-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RTCMeeting-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E663D578DA68E99055631CEBECD05909 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
 		E85EBB46774371BCA221281B9B473B6D /* ARShareDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ARShareDelegate.h; path = RTMeetEngine/RTMeetEngine.framework/Headers/ARShareDelegate.h; sourceTree = "<group>"; };
-		E8FA1464686EF20CF6FBA1E8FD914784 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
-		EC035760E2406B535EDA1FA1F10377A8 /* Pods-RTCMeeting-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RTCMeeting-frameworks.sh"; sourceTree = "<group>"; };
+		E97D43C46A45EE515A4DA3AF94398441 /* libSVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSVProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC4A4C27F842BA3151AB832DB4C805F8 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		F0611C9E291D0BA084DE2BB1DDC53068 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		F2288199BE9E4C7682841DEBFD882CAD /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		F779E383F47F9A193E2142DC3963BF11 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
-		F9569B0697F574753DAC5FD4C5A9C2DC /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
 		FD9758D2C048214E39910C7DA67F3654 /* ARMeetEnum.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ARMeetEnum.h; path = RTMeetEngine/RTMeetEngine.framework/Headers/ARMeetEnum.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2F0A8E3741C526A5E692BC509794E501 /* Frameworks */ = {
+		01095FBE532CF5AA0855A20BDA54BF0B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CB84FFC02510F88F15595B638812DDD9 /* Frameworks */ = {
+		70010619EE67FAA5998927DE2714A46F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E26EBCA20B53C5EAB7727F78FC01A5AF /* Frameworks */ = {
+		7D914FF4993A50B6D2F5E9474F33351E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -203,20 +203,9 @@
 				339748B0AFC2977829E91FADA9A1A9D3 /* SVRadialGradientLayer.h */,
 				5687873F116D5A3D1135FD688AC467AF /* SVRadialGradientLayer.m */,
 				4F534A02433F9CD0849F17FCC25FE728 /* Resources */,
-				C958AC3BAD672A63D051019625FBB676 /* Support Files */,
+				4CC9087871FA9631D7EA1809F7B6823C /* Support Files */,
 			);
 			path = SVProgressHUD;
-			sourceTree = "<group>";
-		};
-		1D7E6C7B25E50982FC7A67949DA843ED /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E047D12A27B7E2B6212F615AF4D4443E /* Masonry.xcconfig */,
-				06D6844F3F2E91B8381CB5896FE6F7B2 /* Masonry-dummy.m */,
-				AA16DCAE23D67256950DF78FF6897B90 /* Masonry-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Masonry";
 			sourceTree = "<group>";
 		};
 		22482E94619909E434349617580ABFF5 /* RTMeetEngine */ = {
@@ -237,37 +226,15 @@
 			path = RTMeetEngine;
 			sourceTree = "<group>";
 		};
-		3E34EA464E6D250DA19F0FC8FB428CD5 /* Masonry */ = {
+		4CC9087871FA9631D7EA1809F7B6823C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				518819988EB59FE514D68031A5BA3F2C /* MASCompositeConstraint.h */,
-				9BA59BFCB3E27874D9A8334FFA794169 /* MASCompositeConstraint.m */,
-				3896A72F8D6439605D80469C627F46B0 /* MASConstraint.h */,
-				B9A58733FEAE219F726BBCB6639AE0C7 /* MASConstraint.m */,
-				358EB7A2E32BEAE7B5B7CF5946824453 /* MASConstraint+Private.h */,
-				47C17F2260714FDA1CB1A5B0E3F6E0D3 /* MASConstraintMaker.h */,
-				89DBA5B0B6BAFEB1E81E013DE6D6469E /* MASConstraintMaker.m */,
-				AE9319293837811FE0B9136C3AB97619 /* MASLayoutConstraint.h */,
-				E8FA1464686EF20CF6FBA1E8FD914784 /* MASLayoutConstraint.m */,
-				35A3C7C669673845E83E6554D55AB90B /* Masonry.h */,
-				541E2EB17D2CE8FCD9A70F8CF73BB29D /* MASUtilities.h */,
-				F779E383F47F9A193E2142DC3963BF11 /* MASViewAttribute.h */,
-				9E16628EA1063994ED22BCA3257239E7 /* MASViewAttribute.m */,
-				2E54AC18FE34D5CD78E7F3012405C156 /* MASViewConstraint.h */,
-				D5D4F7274BC7052DF4AA457375D3AAB5 /* MASViewConstraint.m */,
-				D187AF0910D07A52BC3341C4CD805B98 /* NSArray+MASAdditions.h */,
-				F9569B0697F574753DAC5FD4C5A9C2DC /* NSArray+MASAdditions.m */,
-				3FEC1283EE6CB28EED4F3187102072B3 /* NSArray+MASShorthandAdditions.h */,
-				E5FE5EEADD3A8F5ADE8D5578CDA79C6F /* NSLayoutConstraint+MASDebugAdditions.h */,
-				8D625F952DA778603C73BAC702844044 /* NSLayoutConstraint+MASDebugAdditions.m */,
-				23C2A22FF5F2FF3F109476561DDF7C33 /* View+MASAdditions.h */,
-				3E2B478801BDC3654E78FACA58287F70 /* View+MASAdditions.m */,
-				207B61D748F19CAA4759DB2E2CBA94AD /* View+MASShorthandAdditions.h */,
-				BCD91EA691524A8D2B9038C3A50AB999 /* ViewController+MASAdditions.h */,
-				DE04B004384A97064074205E5ABFAB19 /* ViewController+MASAdditions.m */,
-				1D7E6C7B25E50982FC7A67949DA843ED /* Support Files */,
+				02681DD289E27E25EED346AEED609D0F /* SVProgressHUD.xcconfig */,
+				8B1CC5CF898A980D2837BCB384E28746 /* SVProgressHUD-dummy.m */,
+				5945469436A6BE13517F20586EDAB313 /* SVProgressHUD-prefix.pch */,
 			);
-			path = Masonry;
+			name = "Support Files";
+			path = "../Target Support Files/SVProgressHUD";
 			sourceTree = "<group>";
 		};
 		4F534A02433F9CD0849F17FCC25FE728 /* Resources */ = {
@@ -278,11 +245,26 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		57D552041E4732E0D6EE32B9343862E7 /* Pods-RTCMeeting */ = {
+			isa = PBXGroup;
+			children = (
+				DA76FCF4D0B9886020FC8B7EC3424E58 /* Pods-RTCMeeting-acknowledgements.markdown */,
+				5F883C1C77B9209F6D658118A18F67D3 /* Pods-RTCMeeting-acknowledgements.plist */,
+				A3650701DE3360BE29F89662B61E20B2 /* Pods-RTCMeeting-dummy.m */,
+				BE35E4DF4315E731ECD29A665AE7AA94 /* Pods-RTCMeeting-frameworks.sh */,
+				75A3C4505C8D3321FB0F44C11B31CDCD /* Pods-RTCMeeting-resources.sh */,
+				C546EB4BA236164343445047C5F2A01F /* Pods-RTCMeeting.debug.xcconfig */,
+				92FDCD4785E005A7326BCE2BDC8BBDBC /* Pods-RTCMeeting.release.xcconfig */,
+			);
+			name = "Pods-RTCMeeting";
+			path = "Target Support Files/Pods-RTCMeeting";
+			sourceTree = "<group>";
+		};
 		8A2A0D32071684D43BA65F1EB90515A6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				91F30BD8BF5676218AC9E29D39534FE7 /* Bugly */,
-				3E34EA464E6D250DA19F0FC8FB428CD5 /* Masonry */,
+				C97E2DB5AC2030AD316239ABDF0C84B4 /* Masonry */,
 				22482E94619909E434349617580ABFF5 /* RTMeetEngine */,
 				161EA0D887CC1BA5EDA0887B5692029E /* SVProgressHUD */,
 			);
@@ -314,25 +296,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C90D76E72A8B44B27E8168E882574A2E /* Products */ = {
+		BBE5942A1C2219FA65CFF2848F4D2A27 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				1D66257D62B3768781FD4D290C29D417 /* libMasonry.a */,
-				467505272D967D691F8C3AE6A3573B83 /* libPods-RTCMeeting.a */,
-				074EC36486DE6D58EFF8C3FA7291DA66 /* libSVProgressHUD.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C958AC3BAD672A63D051019625FBB676 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2975DCC9A3D24F9E9795BDF1C3A70B70 /* SVProgressHUD.xcconfig */,
-				E2B8B2B2378383D564EAEAFF2B1F514B /* SVProgressHUD-dummy.m */,
-				03343BD2B8118E0CB8C420C44086E865 /* SVProgressHUD-prefix.pch */,
+				C65A1A105E06AD0951C47C49B99B5574 /* Masonry.xcconfig */,
+				312DA7A0567B6984A43F0FAD85A74312 /* Masonry-dummy.m */,
+				C28B0E887384F6BED37772D2C0B14289 /* Masonry-prefix.pch */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/SVProgressHUD";
+			path = "../Target Support Files/Masonry";
+			sourceTree = "<group>";
+		};
+		C97E2DB5AC2030AD316239ABDF0C84B4 /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				1998A0D9135FF19C2787697480AC80B0 /* MASCompositeConstraint.h */,
+				E663D578DA68E99055631CEBECD05909 /* MASCompositeConstraint.m */,
+				35BE6D992FBF61038C861D697D46FFAD /* MASConstraint.h */,
+				7AECB9AE4F05CB9ECE0E990530EAF556 /* MASConstraint.m */,
+				5E0291ED7B794F6F637FCE6259AD096C /* MASConstraint+Private.h */,
+				1F84D21824192E70B1F7A5AD1487D540 /* MASConstraintMaker.h */,
+				6656BAE7017905E51AF67B76216539F7 /* MASConstraintMaker.m */,
+				95A3F7CCDE1C20F92BA7BAFB8F2BC88F /* MASLayoutConstraint.h */,
+				7F87F0E4D4A239CF078BE602039264CE /* MASLayoutConstraint.m */,
+				6B691D5A796FB4C0641477652FEC3C9A /* Masonry.h */,
+				7862421FA71E573677EE877140EA4E70 /* MASUtilities.h */,
+				671EF307ED7A02CF9F2CBD407571FBDC /* MASViewAttribute.h */,
+				266B59DF65724F3F3A001C3F355C5FDF /* MASViewAttribute.m */,
+				ABFE02A10CCA6C7D99C63E7823534FA9 /* MASViewConstraint.h */,
+				879459E74CEF82B2EF74E144A6EDA10C /* MASViewConstraint.m */,
+				EC4A4C27F842BA3151AB832DB4C805F8 /* NSArray+MASAdditions.h */,
+				9D450F2F1EDD9BF410BA4FAAAD2F1B09 /* NSArray+MASAdditions.m */,
+				8B14A4406829705D995C5D0C32D8C23F /* NSArray+MASShorthandAdditions.h */,
+				256257CD8CF4DE610731158313D6B319 /* NSLayoutConstraint+MASDebugAdditions.h */,
+				1BA234070542F38068AFFA31FC88E6CB /* NSLayoutConstraint+MASDebugAdditions.m */,
+				1EC9400085E7FD4C39FE15EED100D29A /* View+MASAdditions.h */,
+				8528DAA74B9E54F58E006A4D46CA9A21 /* View+MASAdditions.m */,
+				F0611C9E291D0BA084DE2BB1DDC53068 /* View+MASShorthandAdditions.h */,
+				299D46E28F1AA43C85F3E9C4EB1000C8 /* ViewController+MASAdditions.h */,
+				15091F97703FE18F506131D80D6F5B21 /* ViewController+MASAdditions.m */,
+				BBE5942A1C2219FA65CFF2848F4D2A27 /* Support Files */,
+			);
+			path = Masonry;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -341,7 +346,7 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
 				8A2A0D32071684D43BA65F1EB90515A6 /* Pods */,
-				C90D76E72A8B44B27E8168E882574A2E /* Products */,
+				DD6E14C0C118F5ACE6D71B4ED4B2C90B /* Products */,
 				FE48BC3C0824E123007E9AFC48303FBD /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -355,26 +360,21 @@
 			path = "../Target Support Files/RTMeetEngine";
 			sourceTree = "<group>";
 		};
-		D4EDA167FFB8117DE51A0EBB04150181 /* Pods-RTCMeeting */ = {
-			isa = PBXGroup;
-			children = (
-				BC51AEF07E2ACCCF90BAF13C50717D02 /* Pods-RTCMeeting-acknowledgements.markdown */,
-				0D9C2ED5B291C287B630F3B15E5F936E /* Pods-RTCMeeting-acknowledgements.plist */,
-				CC41827B067D3BD5FD458BE1BC568605 /* Pods-RTCMeeting-dummy.m */,
-				EC035760E2406B535EDA1FA1F10377A8 /* Pods-RTCMeeting-frameworks.sh */,
-				74A67D0258DE102399A1949FA0D496DB /* Pods-RTCMeeting-resources.sh */,
-				AF011E9EE2FDFCD3F709C0A84199E9AF /* Pods-RTCMeeting.debug.xcconfig */,
-				48EE3DF7A27D72B975C5EEA320FD9570 /* Pods-RTCMeeting.release.xcconfig */,
-			);
-			name = "Pods-RTCMeeting";
-			path = "Target Support Files/Pods-RTCMeeting";
-			sourceTree = "<group>";
-		};
 		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD6E14C0C118F5ACE6D71B4ED4B2C90B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FFED36A657123030ABB700256D73F15 /* libMasonry.a */,
+				069EF3EB5FA6F28A7918E0537B5EAEA0 /* libPods-RTCMeeting.a */,
+				E97D43C46A45EE515A4DA3AF94398441 /* libSVProgressHUD.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		FB4EAEDAF72B3D5F160113A851BDBFA4 /* Support Files */ = {
@@ -389,7 +389,7 @@
 		FE48BC3C0824E123007E9AFC48303FBD /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D4EDA167FFB8117DE51A0EBB04150181 /* Pods-RTCMeeting */,
+				57D552041E4732E0D6EE32B9343862E7 /* Pods-RTCMeeting */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -397,56 +397,56 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		811701EA4A6CAEF9713EE9A0AF301E9D /* Headers */ = {
+		2697A8D6B2989B073B236F7B4BF67F30 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92BF70E9D3285561EB404A7C4A4A6DEE /* MASCompositeConstraint.h in Headers */,
+				4CE091F886EC6324673EFE0AEBBEA0FE /* MASConstraint+Private.h in Headers */,
+				EB663E3E1EB4BB670DC29B77DB330135 /* MASConstraint.h in Headers */,
+				9194B58ACE900ED6BAE6AD92E24A2CFF /* MASConstraintMaker.h in Headers */,
+				7CF2AC7A3B3ED03B30C1E4ED662B0551 /* MASLayoutConstraint.h in Headers */,
+				B20A0E5D8F9BCED1A82793C4BE9E7258 /* Masonry.h in Headers */,
+				65E88072A2BDC576BFC85E67EF9FBBC6 /* MASUtilities.h in Headers */,
+				42947699890A199B08A896144A878D80 /* MASViewAttribute.h in Headers */,
+				115ACCE253A886181B55773DDC70D6ED /* MASViewConstraint.h in Headers */,
+				F1B75048874B8773E5568E6D3ACA12E4 /* NSArray+MASAdditions.h in Headers */,
+				81F811A56B6724F7E8E2D25364E595E3 /* NSArray+MASShorthandAdditions.h in Headers */,
+				C74D2E856ADC8139CD00DBD184061B23 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */,
+				46692A2E77157B00827182C8DC686F72 /* View+MASAdditions.h in Headers */,
+				A3307B8FB6EE0A049DBAE3AA4D2C6DA0 /* View+MASShorthandAdditions.h in Headers */,
+				E76935CFF4AF327F8D9A7C1935F7D900 /* ViewController+MASAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		864C165B6F096A64CC321493EA8D6188 /* Headers */ = {
+		E41722A1BD41872D45B97FCEF2427E81 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F1CEF2B08D18B900A16F3249C96DBEF /* MASCompositeConstraint.h in Headers */,
-				C1C295BCD795C2B6044DB474583804B1 /* MASConstraint+Private.h in Headers */,
-				834D1BB9656D3E64B2AF8C0E0119A37F /* MASConstraint.h in Headers */,
-				06A4624C0490881FD7962E6F2768469F /* MASConstraintMaker.h in Headers */,
-				F0223A4EEF0A05E2DBC75767471884A2 /* MASLayoutConstraint.h in Headers */,
-				C7AC29F56D5F471248BBA0A724CDF3C7 /* Masonry.h in Headers */,
-				E94F68ABEAC53DD4556594E0EE4EAD57 /* MASUtilities.h in Headers */,
-				62ED0D1B1D2D5EF2225776A9C2BAF4DA /* MASViewAttribute.h in Headers */,
-				1D12FE6ABBFFDECF65CA15759AD0E411 /* MASViewConstraint.h in Headers */,
-				29214D8D2E69809E66F0C8A98A36BCCE /* NSArray+MASAdditions.h in Headers */,
-				96DB2AB39DFEB82319EF630730FDE4FD /* NSArray+MASShorthandAdditions.h in Headers */,
-				147370B40CE853ADCC91F9C81FF5E5FA /* NSLayoutConstraint+MASDebugAdditions.h in Headers */,
-				7C31AFA9C95568E16B6911B670754372 /* View+MASAdditions.h in Headers */,
-				5E44F7CFDA34CB0B1F1A65A19641AC7D /* View+MASShorthandAdditions.h in Headers */,
-				24F67F67B66D71384E9B66CF81AF84B3 /* ViewController+MASAdditions.h in Headers */,
+				8649FA19DB7585214273380164946561 /* SVIndefiniteAnimatedView.h in Headers */,
+				E56ED51862897266BF586BA26965E137 /* SVProgressAnimatedView.h in Headers */,
+				AF559EEBDEEDF421756966862ED3E746 /* SVProgressHUD.h in Headers */,
+				DC85A1CC87F3496C48D0CC2B09E5322F /* SVRadialGradientLayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D3EAF63BB6D2A4A8ADE50FB98860EEDC /* Headers */ = {
+		ED624A403BD3F61EA51270BED608D616 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				283A564C853040B1BD6CEB76789E6D76 /* SVIndefiniteAnimatedView.h in Headers */,
-				835B54CF781E599F46235AE3F48BA40A /* SVProgressAnimatedView.h in Headers */,
-				4C4A7F0FC890313F31ECD636082CB1CB /* SVProgressHUD.h in Headers */,
-				D2DA0FA3532C790CBFB21F5B64CBF944 /* SVRadialGradientLayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3D91917AFCA06AC4E824874A8404D5A2 /* SVProgressHUD */ = {
+		1C8D67D8B72D6BA42CCEDB648537A340 /* SVProgressHUD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 558ED2D9251B2B86E386E6F153F69EF7 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */;
+			buildConfigurationList = F49D2BFAAA78D95C1429E59AB1A23ACE /* Build configuration list for PBXNativeTarget "SVProgressHUD" */;
 			buildPhases = (
-				D3EAF63BB6D2A4A8ADE50FB98860EEDC /* Headers */,
-				28DF05F373610843ACC09B4B1DEA4C86 /* Sources */,
-				CB84FFC02510F88F15595B638812DDD9 /* Frameworks */,
+				E41722A1BD41872D45B97FCEF2427E81 /* Headers */,
+				B76279709442A71C18DF24A6F4A94B43 /* Sources */,
+				70010619EE67FAA5998927DE2714A46F /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -454,37 +454,37 @@
 			);
 			name = SVProgressHUD;
 			productName = SVProgressHUD;
-			productReference = 074EC36486DE6D58EFF8C3FA7291DA66 /* libSVProgressHUD.a */;
+			productReference = E97D43C46A45EE515A4DA3AF94398441 /* libSVProgressHUD.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		60D2F2DD37DDF8E4608904F6AEACE584 /* Pods-RTCMeeting */ = {
+		36121A69BB90DD8184854D0776C058C0 /* Pods-RTCMeeting */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 771FD4CB5E42579502E3C65095124DE7 /* Build configuration list for PBXNativeTarget "Pods-RTCMeeting" */;
+			buildConfigurationList = 4A1C8C8161B89B8E9256E627200B21B1 /* Build configuration list for PBXNativeTarget "Pods-RTCMeeting" */;
 			buildPhases = (
-				811701EA4A6CAEF9713EE9A0AF301E9D /* Headers */,
-				DFA3EE3ACFFF8B017D7441C7060F85FD /* Sources */,
-				E26EBCA20B53C5EAB7727F78FC01A5AF /* Frameworks */,
+				ED624A403BD3F61EA51270BED608D616 /* Headers */,
+				7AB2D24E53632AEA481E5852A737B3D7 /* Sources */,
+				7D914FF4993A50B6D2F5E9474F33351E /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B0401F5631FDD5F3F83DB82E853083B6 /* PBXTargetDependency */,
-				B6F02051F60818F30A34E1D5F2ABD2BE /* PBXTargetDependency */,
-				07553CAB8324FCD20EC843532B281057 /* PBXTargetDependency */,
-				69992418236E8FA4D5C3B1107D76EB6C /* PBXTargetDependency */,
+				F3647E89C50FA58A4401B3B4081ED896 /* PBXTargetDependency */,
+				A83061831240C833273748BEB2DCD931 /* PBXTargetDependency */,
+				0CEA0147629339122258248E497284FE /* PBXTargetDependency */,
+				98CB7940FD1EAEE4AA01A46FDDC20FE4 /* PBXTargetDependency */,
 			);
 			name = "Pods-RTCMeeting";
 			productName = "Pods-RTCMeeting";
-			productReference = 467505272D967D691F8C3AE6A3573B83 /* libPods-RTCMeeting.a */;
+			productReference = 069EF3EB5FA6F28A7918E0537B5EAEA0 /* libPods-RTCMeeting.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		B854683690DC218F2B6E2FFDB0D27CDC /* Masonry */ = {
+		55AF53E6C77A10ED4985E04D74A8878E /* Masonry */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EF625691042B208B0F87D7C89735A2BB /* Build configuration list for PBXNativeTarget "Masonry" */;
+			buildConfigurationList = 0B9F7EAACDDA564EC328F53A4AB8CF85 /* Build configuration list for PBXNativeTarget "Masonry" */;
 			buildPhases = (
-				864C165B6F096A64CC321493EA8D6188 /* Headers */,
-				20B59DF52315F7BEE4C186DFC2709780 /* Sources */,
-				2F0A8E3741C526A5E692BC509794E501 /* Frameworks */,
+				2697A8D6B2989B073B236F7B4BF67F30 /* Headers */,
+				8C28688BF2BD730285E2F5DE30F8C021 /* Sources */,
+				01095FBE532CF5AA0855A20BDA54BF0B /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -492,7 +492,7 @@
 			);
 			name = Masonry;
 			productName = Masonry;
-			productReference = 1D66257D62B3768781FD4D290C29D417 /* libMasonry.a */;
+			productReference = 1FFED36A657123030ABB700256D73F15 /* libMasonry.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -501,100 +501,274 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1010;
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1110;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = C90D76E72A8B44B27E8168E882574A2E /* Products */;
+			productRefGroup = DD6E14C0C118F5ACE6D71B4ED4B2C90B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A14AECE0D6E5F04D08EDDB51F60B69E4 /* Bugly */,
-				B854683690DC218F2B6E2FFDB0D27CDC /* Masonry */,
-				60D2F2DD37DDF8E4608904F6AEACE584 /* Pods-RTCMeeting */,
-				A6ABC7991CF3462F64EF140DAAE502DE /* RTMeetEngine */,
-				3D91917AFCA06AC4E824874A8404D5A2 /* SVProgressHUD */,
+				4A68CFD979D413A619DF631BB121D98F /* Bugly */,
+				55AF53E6C77A10ED4985E04D74A8878E /* Masonry */,
+				36121A69BB90DD8184854D0776C058C0 /* Pods-RTCMeeting */,
+				2791A72446969A0655E24D3977704A7F /* RTMeetEngine */,
+				1C8D67D8B72D6BA42CCEDB648537A340 /* SVProgressHUD */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		20B59DF52315F7BEE4C186DFC2709780 /* Sources */ = {
+		7AB2D24E53632AEA481E5852A737B3D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E3B9E29E64A41419BADE54AEFDAF08E /* MASCompositeConstraint.m in Sources */,
-				B5F8B45888F4DFECC89DBA2B0307C178 /* MASConstraint.m in Sources */,
-				60DC27F14226DDD592FA1464C2DA0C2E /* MASConstraintMaker.m in Sources */,
-				AB74AF1EEF7E9D9855E150F344F8CBD5 /* MASLayoutConstraint.m in Sources */,
-				34D6D9E7FEAF947841106F0662A2E52D /* Masonry-dummy.m in Sources */,
-				9F7245F368B8CD09FE3F2C36BAA2842D /* MASViewAttribute.m in Sources */,
-				591F1FA04AB069DD22008A8BABAAB829 /* MASViewConstraint.m in Sources */,
-				D59F2BB9843C83057A2BAAD5054B68AE /* NSArray+MASAdditions.m in Sources */,
-				C48DF5D21345BD3D127256C6AD3AEFD4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
-				EAED263ADDF8EBE21F1EE02F9FB8FD7E /* View+MASAdditions.m in Sources */,
-				D1D4442E6949DAF0EB2688A85F889E8D /* ViewController+MASAdditions.m in Sources */,
+				F8D781F8EE51680CF7160A87F98F6AF8 /* Pods-RTCMeeting-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		28DF05F373610843ACC09B4B1DEA4C86 /* Sources */ = {
+		8C28688BF2BD730285E2F5DE30F8C021 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F55CC1609001A978F28D174CBB730953 /* SVIndefiniteAnimatedView.m in Sources */,
-				0E240C43FBA5F9757ECCFA06674486D6 /* SVProgressAnimatedView.m in Sources */,
-				EE92FCF6C8AAB755954BD1A35F99A713 /* SVProgressHUD-dummy.m in Sources */,
-				9A211D21F704F250BF1AAA53A7B94878 /* SVProgressHUD.m in Sources */,
-				8FC078B82C837D5F1A05757DB28DB632 /* SVRadialGradientLayer.m in Sources */,
+				63F87C318437740E8202E4D3DD0826FA /* MASCompositeConstraint.m in Sources */,
+				EE936A6838005A5ED1BC5F74BE37B7BD /* MASConstraint.m in Sources */,
+				1E5D56FF58658F9F45723CA2940489EE /* MASConstraintMaker.m in Sources */,
+				0096B5A8BA8E4F2BFD8839D0FE7CD696 /* MASLayoutConstraint.m in Sources */,
+				D72EE0E749232B2C899702FC1C9402BB /* Masonry-dummy.m in Sources */,
+				A893FFB0F9137E298D6752729850D1D6 /* MASViewAttribute.m in Sources */,
+				572D05B146EAA3EF5530A0D0E34904A0 /* MASViewConstraint.m in Sources */,
+				B946AFB1A725D85E07F645A7EF086383 /* NSArray+MASAdditions.m in Sources */,
+				59EA578EED8BAC126FDC60C32AE11521 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				C7920681F0164686C56327ED3C6AAC58 /* View+MASAdditions.m in Sources */,
+				C05FC6699632FE712174ED875A605410 /* ViewController+MASAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DFA3EE3ACFFF8B017D7441C7060F85FD /* Sources */ = {
+		B76279709442A71C18DF24A6F4A94B43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A090D8155E605A0B026212726EC71CAF /* Pods-RTCMeeting-dummy.m in Sources */,
+				545325DBA1132F1E2DA1C20B95108395 /* SVIndefiniteAnimatedView.m in Sources */,
+				28EE1597D49EEC635522C951B57940C5 /* SVProgressAnimatedView.m in Sources */,
+				9E6A86D1D3983E3AD2802CA2B480D515 /* SVProgressHUD-dummy.m in Sources */,
+				4971C5D36C8DB492740A46B331AB537D /* SVProgressHUD.m in Sources */,
+				F469136DE2F0C917744B2169A95A73E5 /* SVRadialGradientLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		07553CAB8324FCD20EC843532B281057 /* PBXTargetDependency */ = {
+		0CEA0147629339122258248E497284FE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RTMeetEngine;
-			target = A6ABC7991CF3462F64EF140DAAE502DE /* RTMeetEngine */;
-			targetProxy = 295207A18EDBECC90F2EF13FA3F06256 /* PBXContainerItemProxy */;
+			target = 2791A72446969A0655E24D3977704A7F /* RTMeetEngine */;
+			targetProxy = 6D5751871167096FDA4E6BEED88208CF /* PBXContainerItemProxy */;
 		};
-		69992418236E8FA4D5C3B1107D76EB6C /* PBXTargetDependency */ = {
+		98CB7940FD1EAEE4AA01A46FDDC20FE4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SVProgressHUD;
-			target = 3D91917AFCA06AC4E824874A8404D5A2 /* SVProgressHUD */;
-			targetProxy = F74AC862BB51ADFF073B3D10ADA1FC90 /* PBXContainerItemProxy */;
+			target = 1C8D67D8B72D6BA42CCEDB648537A340 /* SVProgressHUD */;
+			targetProxy = F665534EB622DA53B0D54F76B72F435B /* PBXContainerItemProxy */;
 		};
-		B0401F5631FDD5F3F83DB82E853083B6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Bugly;
-			target = A14AECE0D6E5F04D08EDDB51F60B69E4 /* Bugly */;
-			targetProxy = B26A7E3E36D6D0236F388DF6B639D282 /* PBXContainerItemProxy */;
-		};
-		B6F02051F60818F30A34E1D5F2ABD2BE /* PBXTargetDependency */ = {
+		A83061831240C833273748BEB2DCD931 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Masonry;
-			target = B854683690DC218F2B6E2FFDB0D27CDC /* Masonry */;
-			targetProxy = 787F880C4E5D7FC5BB841A5E3ECEDF01 /* PBXContainerItemProxy */;
+			target = 55AF53E6C77A10ED4985E04D74A8878E /* Masonry */;
+			targetProxy = 7DAD5E3FD9F8C1BF380FA824A39CDA22 /* PBXContainerItemProxy */;
+		};
+		F3647E89C50FA58A4401B3B4081ED896 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Bugly;
+			target = 4A68CFD979D413A619DF631BB121D98F /* Bugly */;
+			targetProxy = 52831F6E684237F466F6D73DC3449FD2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		07488D4657FB0A78086563621D425F8A /* Debug */ = {
+		1129C142CDE7F93E5F65C52D9847FDBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02681DD289E27E25EED346AEED609D0F /* SVProgressHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SVProgressHUD;
+				PRODUCT_NAME = SVProgressHUD;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		19A951197EB8F0681A33440E050EDC56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92FDCD4785E005A7326BCE2BDC8BBDBC /* Pods-RTCMeeting.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2864B8151371217E5A22C6412F492423 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C65A1A105E06AD0951C47C49B99B5574 /* Masonry.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = Masonry;
+				PRODUCT_NAME = Masonry;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3DFE4C1775DABD9FBBB80DC272E2BC43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C546EB4BA236164343445047C5F2A01F /* Pods-RTCMeeting.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5D61DC43C7DC2F90C295C51D66EEE358 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C65A1A105E06AD0951C47C49B99B5574 /* Masonry.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = Masonry;
+				PRODUCT_NAME = Masonry;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8F17DC3A99F99FBAD606CE6963886315 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		916E0404255105F480DC4950B7625F7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -653,197 +827,10 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
-		};
-		1A4A99CA27B27CA36DF89E564B30821F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2975DCC9A3D24F9E9795BDF1C3A70B70 /* SVProgressHUD.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = SVProgressHUD;
-				PRODUCT_NAME = SVProgressHUD;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		21069813B74BF3A4619A0A01270FCD3E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF011E9EE2FDFCD3F709C0A84199E9AF /* Pods-RTCMeeting.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		3D5426F7340D22C7CB723E60D94182F7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2975DCC9A3D24F9E9795BDF1C3A70B70 /* SVProgressHUD.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = SVProgressHUD;
-				PRODUCT_NAME = SVProgressHUD;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		42A68CA69A92AF2B42ADB6110291A3AC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C36790462E27070CB3E514ED3FE8B5BC /* RTMeetEngine.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		798B6F5F7D0D2C098E99138EA08CB2A1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48EE3DF7A27D72B975C5EEA320FD9570 /* Pods-RTCMeeting.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		9C3DCCF6B5839F21EB4AC097B12672C7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E047D12A27B7E2B6212F615AF4D4443E /* Masonry.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = Masonry;
-				PRODUCT_NAME = Masonry;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		A1962E6FF39BBAC201A2E5DDF99557DF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
 		};
 		B4ABE844023D97FC2B03226F5F57024E /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -852,27 +839,47 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		D7A2ADF8E19405B820AE14A234B07C6F /* Debug */ = {
+		BF157DDD23B78A977AD5F1ED2710A8A3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E047D12A27B7E2B6212F615AF4D4443E /* Masonry.xcconfig */;
+			baseConfigurationReference = C36790462E27070CB3E514ED3FE8B5BC /* RTMeetEngine.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C91E657779E99963233F116F53683F78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02681DD289E27E25EED346AEED609D0F /* SVProgressHUD.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = Masonry;
-				PRODUCT_NAME = Masonry;
+				PRODUCT_MODULE_NAME = SVProgressHUD;
+				PRODUCT_NAME = SVProgressHUD;
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -888,21 +895,27 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		E8E850F71B4E455338313D4979335C0C /* Debug */ = {
+		F33F3D31D7B4F18803A7074CD8D56DF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C36790462E27070CB3E514ED3FE8B5BC /* RTMeetEngine.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -911,11 +924,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		202492C5C4B9A4FDB60EEB51EBD211A6 /* Build configuration list for PBXAggregateTarget "RTMeetEngine" */ = {
+		0B9F7EAACDDA564EC328F53A4AB8CF85 /* Build configuration list for PBXNativeTarget "Masonry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E8E850F71B4E455338313D4979335C0C /* Debug */,
-				42A68CA69A92AF2B42ADB6110291A3AC /* Release */,
+				5D61DC43C7DC2F90C295C51D66EEE358 /* Debug */,
+				2864B8151371217E5A22C6412F492423 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -923,26 +936,26 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				07488D4657FB0A78086563621D425F8A /* Debug */,
-				A1962E6FF39BBAC201A2E5DDF99557DF /* Release */,
+				916E0404255105F480DC4950B7625F7A /* Debug */,
+				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		558ED2D9251B2B86E386E6F153F69EF7 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
+		4A1C8C8161B89B8E9256E627200B21B1 /* Build configuration list for PBXNativeTarget "Pods-RTCMeeting" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3D5426F7340D22C7CB723E60D94182F7 /* Debug */,
-				1A4A99CA27B27CA36DF89E564B30821F /* Release */,
+				3DFE4C1775DABD9FBBB80DC272E2BC43 /* Debug */,
+				19A951197EB8F0681A33440E050EDC56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		771FD4CB5E42579502E3C65095124DE7 /* Build configuration list for PBXNativeTarget "Pods-RTCMeeting" */ = {
+		73FF15EAF0C68981E1442292D0EE0DB7 /* Build configuration list for PBXAggregateTarget "RTMeetEngine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				21069813B74BF3A4619A0A01270FCD3E /* Debug */,
-				798B6F5F7D0D2C098E99138EA08CB2A1 /* Release */,
+				F33F3D31D7B4F18803A7074CD8D56DF5 /* Debug */,
+				BF157DDD23B78A977AD5F1ED2710A8A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -956,11 +969,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EF625691042B208B0F87D7C89735A2BB /* Build configuration list for PBXNativeTarget "Masonry" */ = {
+		F49D2BFAAA78D95C1429E59AB1A23ACE /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D7A2ADF8E19405B820AE14A234B07C6F /* Debug */,
-				9C3DCCF6B5839F21EB4AC097B12672C7 /* Release */,
+				C91E657779E99963233F116F53683F78 /* Debug */,
+				1129C142CDE7F93E5F65C52D9847FDBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

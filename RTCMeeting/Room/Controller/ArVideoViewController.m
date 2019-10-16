@@ -120,12 +120,12 @@ static const CGFloat scrollHeight = 130;
 
 // MARK: - ARMeetKitDelegate
 
-- (void)onRTCJoinMeetOK:(NSString *)anyRTCId {
+- (void)onRTCJoinMeetOK:(NSString *)meetId {
     //加入会议成功
     ArCallbackLog;
 }
 
-- (void)onRTCJoinMeetFailed:(NSString *)anyRTCId code:(ARMeetCode)code reason:(NSString *)reason {
+- (void)onRTCJoinMeetFailed:(NSString *)meetId code:(ARMeetCode)code reason:(NSString *)reason {
     //加入会议失败
     NSString *errorText = @"加入会议失败";
     (code == ARMeet_IS_FULL) ? (errorText = @"会议人数已满") : nil;

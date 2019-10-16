@@ -12,6 +12,7 @@
 @interface ArMainViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *roomIdTextField;
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 
 @end
 
@@ -22,6 +23,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard)];
     [self.view addGestureRecognizer:tap];
+    self.versionLabel.text = [NSString stringWithFormat:@"V %@\n 技术支持：hi@dync.cc",Version];
 }
 
 - (IBAction)joinRoom:(id)sender {

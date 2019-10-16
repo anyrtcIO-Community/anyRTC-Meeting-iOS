@@ -8,6 +8,7 @@
 
 #ifndef ARMeetKitDelegate_h
 #define ARMeetKitDelegate_h
+#import <AVFoundation/AVFoundation.h>
 
 #import "ARMeetOption.h"
 
@@ -31,11 +32,11 @@
 /**
  加入会议失败
  
- @param anyRTCId 会议号(在开发者业务系统中保持唯一的Id)
+ @param meetId 会议号(在开发者业务系统中保持唯一的Id)
  @param code 状态码
  @param reason 错误原因，RTC错误或者token错误(错误值自己平台定义)
  */
-- (void)onRTCJoinMeetFailed:(NSString *)anyRTCId code:(ARMeetCode)code reason:(NSString *)reason;
+- (void)onRTCJoinMeetFailed:(NSString *)meetId code:(ARMeetCode)code reason:(NSString *)reason;
 
 /**
  RTC服务已断开
@@ -269,6 +270,36 @@
              allRenderNum:(int)allRenderNum
                beginIndex:(int)index
                   showNum:(int)showNum;
+
+#pragma mark -  Video Audio data
+/**
+ 获取视频的原始采集数据
+ 
+ @param sampleBuffer 视频数据
+ @return 视频对象（处理过或者没做处理）
+ */
+- (CVPixelBufferRef)onRTCCaptureVideoPixelBuffer:(CMSampleBufferRef)sampleBuffer;
+
+/**
+ 本地音频数据回调
+
+ @param audioSamples pcm数据
+ @param sampleRate 采样率
+ @param channel 声道
+ @param length 数据长度
+ */
+- (void)onRTCLocalAudioPcmBuffer:(const char * _Nullable)audioSamples sample:(int)sampleRate channel:(int)channel length:(int)length;
+
+/**
+ 远程音频数据回调
+
+ @param audioSamples pcm数据
+ @param sampleRate 采样率
+ @param channel 声道
+ @param length 数据长度
+ @param peerId RTC服务生成的与会者标识Id（用于标识与会者用户，每次随机生成）
+ */
+- (void)onRTCRemoteAudioPcmBuffer:(const char * _Nullable)audioSamples sample:(int)sampleRate channel:(int)channel length:(int)length peerId:(NSString *_Nullable)peerId;
 
 @end
 

@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (instancetype)initWithDelegate:(id <ARMeetKitDelegate>)delegate option:(ARMeetOption *)option;
 
-#pragma mark Common function
+#pragma mark 常用方法
 
 /**
  设置本地音频是否传输
@@ -89,7 +89,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 
 - (void)setLocalVideoCapturer:(VIEW_CLASS * _Nullable)render;
-
 /**
  设置本地显示模式
  
@@ -149,7 +148,48 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)muteRemoteAudioStream:(BOOL)mute pubId:(NSString *)pubId;
 
-#pragma mark RTC function for line
+
+/**
+ 截图功能
+ 
+ @param userId 用户Id
+ @param block 数据回调
+ */
+- (void)snapPicture:(NSString*)userId complete:(ScreenshotsBlock)block;
+
+#pragma mark - 外部塞流
+
+/**
+ 设置使用外置摄像头
+ 
+ @param enable 是否使用外置摄像头
+ @param type YUV420PType:yuv  RGBType:rgb
+ */
+
+- (void)setExternalCameraCapturer:(BOOL)enable dataType:(ARCaptureType)type;
+
+/**
+ 向内部塞流
+
+ @param bufferRef 视频流数据
+ @param rotation 视频方向
+ @return 成功与否
+ */
+- (BOOL)sendExternalCameraCapturerBuffer:(CVPixelBufferRef)bufferRef rotation:(ARVideoRotation)rotation;
+
+/**
+ 向内部塞流
+
+ @param data 视频流数据（yuv420格式的，或者ARGB数据）
+ @param rotation 视频方向
+ @param width 视频宽
+ @param height 视频高
+ @return 成功与否
+ */
+- (BOOL)sendExternalCameraData:(NSData*)data rotation:(ARVideoRotation)rotation pixelsWidth:(int)width
+                pixelsHeight:(int)height;
+
+#pragma mark RTC 相关方法
 
 /**
  加入会议
@@ -211,7 +251,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setRTCTalkOnly:(BOOL)enable peerId:(NSString *)peerId;
 
-#pragma mark - 消息
+#pragma mark - 发消息
 
 /**
  发送消息
@@ -224,7 +264,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)sendUserMessage:(NSString *)userName userHeader:(NSString *)headerUrl content:(NSString *)content;
 
-#pragma mark - 流量信息监测
+#pragma mark - 流量信息监测以及音频数据回到
 
 /**
  设置网络质量是否打开
@@ -239,6 +279,28 @@ NS_ASSUME_NONNULL_BEGIN
  @return 获取网络状态
  */
 - (BOOL)networkStatusEnabled;
+
+/**
+ 设置音频数据是否回调
+ 
+ @param enable YES打开回调，NO关闭回调，默认关闭
+ */
+- (void)setAudioDataCallBack:(BOOL)enable;
+/**
+ 获取当前音频回调是否打开
+ 
+ @return 获取音频回调状态
+ */
+- (BOOL)audioDataCallBackEnabled;
+
+/**
+ 重新采样率
+
+ @param sampleRate 采样率，仅支持 8000,16000,32000,44100,48000
+ @param channel 频道数量
+ @return YES:成功;NO:失败
+ */
+- (BOOL)resamplerLocalAudio:(int)sampleRate channel:(int)channel;
 
 /**
  获取人员列表
@@ -300,6 +362,28 @@ NS_ASSUME_NONNULL_BEGIN
  @return 操作是否成功
  */
 - (BOOL)setZoomPageIndex:(int)index showNum:(int)showNum;
+
+#pragma mark -
+
+/**
+ 开始录制
+ 
+ **说明:**
+ - 录制本地音视频+远程音频：方法:[rtcEngine startRecording:@"/var/mobile/Containers/Data/Application/32C7AD6B-B066-49C3-9E7A-69F63A328438/Documents/test.mp4" recordVideo:YES];
+ - 录制本地音频+远程音频：方法:[rtcEngine startRecording:@"/var/mobile/Containers/Data/Application/32C7AD6B-B066-49C3-9E7A-69F63A328438/Documents/test.mp3" recordVideo:NO];
+ 
+ @param filePath 沙盒路径+文件名称
+ @param video YES:录制本地视频；NO:不录制视频
+ @return 0：成功，-1：失败
+ */
+- (int)startRecording:(NSString *)filePath recordVideo:(BOOL)video;
+
+/**
+ 结束录制
+ 
+ @return 0：成功，-1：失败
+ */
+- (int)stopRecording;
 
 @end
 

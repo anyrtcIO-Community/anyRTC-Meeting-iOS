@@ -41,6 +41,9 @@ typedef NS_ENUM(NSInteger,ARMeetCode) {
     ARMeet_FORCE_EXIT = 211,           // 强制离开
     ARMeet_AUTH_TIMEOUT = 212,         // 验证超时
     ARMeet_NEED_VERTIFY_TOKEN = 213,   // 需要验证userToken
+    ARMeet_WEB_DOMIAN_ERROR = 214,     // Web应用的域名验证失败
+    ARMeet_IOS_BUNDLE_ID_ERROR = 215,  // iOS应用的BundleId验证失败
+    ARMeet_ANDROID_PKG_NAME_ERROR = 216,// Android应用的包名验证失败
     
     ARMeet_NOT_STAAR = 700,            // 房间未开始
     ARMeet_IS_FULL = 701,              // 房间人员已满

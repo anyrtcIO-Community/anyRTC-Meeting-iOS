@@ -14,7 +14,7 @@ Xcode 8以上</br>
 
 ### Cocoapods导入
 ```
-pod 'RTMeetEngine', '~> 3.0.0'
+pod 'RTMeetEngine', '~> 3.0.1'
 ```
 ### 手动导入
 
@@ -64,6 +64,14 @@ pod 'RTMeetEngine', '~> 3.0.0'
 
 ## 更新日志
 
+* 2019年10月15日：Version 3.0.1 </br>
+
+（1）新增塞流接口（setExternalCameraCapturer）；
+
+（2）新增流量信息监测以及音频数据信息；
+
+（3）新增录制相关方法（startRecording:recordVideo:）。
+
 * 2019年05月14日：</br>
 
 SDK更新3.0.0版本</br>
@@ -88,10 +96,13 @@ SDK更新3.0.0版本</br>
 （3）修复Demo中的已知问题。
 
 ## 技术支持
-anyRTC官方网址：https://www.anyrtc.io </br>
-QQ技术交流群：554714720 </br>
-联系电话:021-65650071-816 </br>
-Email:hi@dync.cc </br>
+* anyRTC官方网址：https://www.anyrtc.io </br>
+
+* QQ技术交流群：554714720 </br>
+
+* 联系电话:021-65650071-816 </br>
+
+* Email:hi@dync.cc </br>
 
 ## 关于直播
 本公司有一整套直播解决方案，特别针对移动端。本公司开发者平台[www.anyrtc.io](http://www.anyrtc.io)。除了基于RTMP协议的直播系统外，我公司还有基于WebRTC的时时交互直播系统、P2P呼叫系统、会议系统等。快捷集成SDK，便可让你的应用拥有时时通话功能。欢迎您的来电~
