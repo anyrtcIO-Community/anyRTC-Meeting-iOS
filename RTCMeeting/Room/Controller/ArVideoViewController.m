@@ -15,9 +15,9 @@ static const CGFloat scrollHeight = 130;
 @property (weak, nonatomic) IBOutlet UIView *localView;
 @property (weak, nonatomic) IBOutlet UILabel *roomIdLabel;
 @property (weak, nonatomic) IBOutlet UIButton *hangupButton;
-/** 会议对象 */
+/* 会议对象 **/
 @property (nonatomic, strong) ARMeetKit *meetKit;
-/** 底部滚动视图 */
+/* 底部滚动视图 **/
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIStackView *stackView;
 @property (nonatomic, strong) NSMutableArray *videoArr;

@@ -18,6 +18,7 @@
 static NSString *token = @"XXXXXX";
 static NSString *appID = @"XXXXXX";
 
+
 //MARK: - ARMeetSDK
 #import <RTMeetEngine/ARMeetSDK.h>
 
@@ -26,6 +27,7 @@ static NSString *appID = @"XXXXXX";
 #import <Masonry.h>
 #import "ArLogView.h"
 #import "ArVideoView.h"
+#import "UIViewController+PresentModel.h"
 
 //MARK: - 宏
 

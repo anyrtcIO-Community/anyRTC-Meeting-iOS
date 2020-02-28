@@ -18,7 +18,7 @@ pod 'RTMeetEngine', '~> 3.0.1'
 ```
 ### 手动导入
 
-1. 下载Demo，或者前往[anyRTC官网](https://www.anyrtc.io/resoure)下载SDK
+1. 下载Demo，或者前往[anyRTC官网](https://www.anyrtc.io)下载SDK
 ![list_directory](/image/list_directory.png)
 
 
@@ -40,7 +40,7 @@ pod 'RTMeetEngine', '~> 3.0.1'
 2、另一台手机进入相同会议房间，实时会议开始。</br>
 
 ### 资源中心
-[更多详细方法使用，请查看API文档](https://www.anyrtc.io/resoure)
+[更多详细方法使用，请查看API文档](https://docs.anyrtc.io/v1/MEET/)
 
 
 ## 扫描二维码下载demo

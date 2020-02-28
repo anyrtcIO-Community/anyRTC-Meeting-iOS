@@ -17,6 +17,7 @@
 		63607AAD2237AEA900200745 /* RTCMeetingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63607AAC2237AEA900200745 /* RTCMeetingTests.m */; };
 		63607AB82237AEA900200745 /* RTCMeetingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63607AB72237AEA900200745 /* RTCMeetingUITests.m */; };
 		63607ACC2237B1FF00200745 /* ArVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63607ACB2237B1FF00200745 /* ArVideoViewController.m */; };
+		637462492408E2BB00805E18 /* UIViewController+PresentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 637462482408E2BB00805E18 /* UIViewController+PresentModel.m */; };
 		63FD3E9C228523F900194F79 /* ArMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD3E9B228523F900194F79 /* ArMainViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,8 @@
 		63607AB92237AEA900200745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63607ACA2237B1FF00200745 /* ArVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArVideoViewController.h; sourceTree = "<group>"; };
 		63607ACB2237B1FF00200745 /* ArVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArVideoViewController.m; sourceTree = "<group>"; };
+		637462472408E2BB00805E18 /* UIViewController+PresentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PresentModel.h"; sourceTree = "<group>"; };
+		637462482408E2BB00805E18 /* UIViewController+PresentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PresentModel.m"; sourceTree = "<group>"; };
 		63D4DFE92355D2A400C862C6 /* RTCMeeting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RTCMeeting.entitlements; sourceTree = "<group>"; };
 		63FD3E9A228523F900194F79 /* ArMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArMainViewController.h; sourceTree = "<group>"; };
 		63FD3E9B228523F900194F79 /* ArMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArMainViewController.m; sourceTree = "<group>"; };
@@ -121,6 +124,8 @@
 				63607A942237AEA800200745 /* AppDelegate.m */,
 				63FD3E9A228523F900194F79 /* ArMainViewController.h */,
 				63FD3E9B228523F900194F79 /* ArMainViewController.m */,
+				637462472408E2BB00805E18 /* UIViewController+PresentModel.h */,
+				637462482408E2BB00805E18 /* UIViewController+PresentModel.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 			files = (
 				63607AA32237AEA900200745 /* main.m in Sources */,
 				630CC845224333200092F06F /* ArLogView.m in Sources */,
+				637462492408E2BB00805E18 /* UIViewController+PresentModel.m in Sources */,
 				63607A952237AEA800200745 /* AppDelegate.m in Sources */,
 				63607ACC2237B1FF00200745 /* ArVideoViewController.m in Sources */,
 				63FD3E9C228523F900194F79 /* ArMainViewController.m in Sources */,
@@ -581,7 +587,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = RTCMeeting/RTCMeeting.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5543CP4MRT;
 				ENABLE_BITCODE = NO;
@@ -612,7 +618,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = RTCMeeting/RTCMeeting.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5543CP4MRT;
 				ENABLE_BITCODE = NO;
